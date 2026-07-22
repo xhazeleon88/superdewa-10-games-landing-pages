@@ -1,38 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-label="Superdewa">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 140" role="img" aria-label="Superdewa">
   <defs>
-    <linearGradient id="sdBlue" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7AD7FF"/>
-      <stop offset="55%" stop-color="#2B9FE8"/>
-      <stop offset="100%" stop-color="#0B5FA8"/>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5AD7FF"/>
+      <stop offset="45%" stop-color="#00ADEF"/>
+      <stop offset="100%" stop-color="#0077B6"/>
     </linearGradient>
-    <linearGradient id="sdRed" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FF6B75"/>
-      <stop offset="55%" stop-color="#E53945"/>
-      <stop offset="100%" stop-color="#9B1424"/>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF5A5F"/>
+      <stop offset="45%" stop-color="#ED1C24"/>
+      <stop offset="100%" stop-color="#A50F14"/>
     </linearGradient>
-    <linearGradient id="sdBolt" x1="0" y1="0" x2="0" y2="1">
+    <linearGradient id="boltGrad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%" stop-color="#FFF59D"/>
-      <stop offset="100%" stop-color="#FFD400"/>
+      <stop offset="100%" stop-color="#FFF200"/>
     </linearGradient>
-    <filter id="sdHardShadow" x="-10%" y="-10%" width="120%" height="140%">
-      <feDropShadow dx="0" dy="3" stdDeviation="0" flood-color="#0A1A3A" flood-opacity="0.9"/>
-    </filter>
   </defs>
-  <g font-family="Arial Black, Impact, sans-serif" font-size="78" font-style="italic" font-weight="900" letter-spacing="-2" filter="url(#sdHardShadow)">
-    <!-- Outer dark stroke via duplicate -->
-    <text x="18" y="86" fill="#1A237E" stroke="#1A237E" stroke-width="14" stroke-linejoin="round">SUPER</text>
-    <text x="338" y="86" fill="#1A237E" stroke="#1A237E" stroke-width="14" stroke-linejoin="round">DEWA</text>
+  <g font-family="Arial Black, Impact, Haettenschweiler, sans-serif" font-size="92" font-style="italic" font-weight="900" letter-spacing="-3">
+    <!-- Navy outer punch -->
+    <text x="24" y="98" fill="#1B1464" stroke="#1B1464" stroke-width="16" stroke-linejoin="round">SUPER</text>
+    <text x="370" y="98" fill="#1B1464" stroke="#1B1464" stroke-width="16" stroke-linejoin="round">DEWA</text>
     <!-- White outline -->
-    <text x="18" y="86" fill="#fff" stroke="#fff" stroke-width="8" stroke-linejoin="round">SUPER</text>
-    <text x="338" y="86" fill="#fff" stroke="#fff" stroke-width="8" stroke-linejoin="round">DEWA</text>
+    <text x="24" y="98" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round">SUPER</text>
+    <text x="370" y="98" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round">DEWA</text>
     <!-- Fills -->
-    <text x="18" y="86" fill="url(#sdBlue)">SUPER</text>
-    <text x="338" y="86" fill="url(#sdRed)">DEWA</text>
+    <text x="24" y="98" fill="url(#blueGrad)">SUPER</text>
+    <text x="370" y="98" fill="url(#redGrad)">DEWA</text>
   </g>
-  <!-- Lightning bolt separator -->
-  <g transform="translate(300,8)">
-    <path d="M28 4 L8 58 H26 L14 108 L52 42 H32 L48 4 Z" fill="#1A237E"/>
-    <path d="M28 8 L12 54 H28 L18 100 L46 44 H30 L44 8 Z" fill="#fff"/>
-    <path d="M28 12 L14 52 H28 L20 92 L42 46 H28 L40 12 Z" fill="url(#sdBolt)"/>
+  <!-- Lightning bolt -->
+  <g transform="translate(318,6)">
+    <path d="M34 2 L6 62 H28 L12 126 L58 48 H34 L52 2 Z" fill="#1B1464"/>
+    <path d="M34 6 L10 60 H30 L16 116 L52 50 H32 L48 6 Z" fill="#FFFFFF"/>
+    <path d="M34 10 L14 58 H30 L20 106 L48 52 H30 L46 10 Z" fill="url(#boltGrad)"/>
   </g>
 </svg>

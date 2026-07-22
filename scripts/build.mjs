@@ -8,6 +8,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sites, GROUP_URLS } from "./sites-data.mjs";
 import { enrichItem, buildProse } from "./content-engine.mjs";
+import { getTheme } from "./site-themes.mjs";
+import { faviconSvg } from "./favicons.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -81,13 +83,21 @@ function relatedLinks(site, current, depth) {
     .join("\n");
 }
 
-function layout({ site, depth, title, description, canonical, heading, body, schema, activeNav }) {
+function layout({ site, theme, depth, title, description, canonical, body, schema, activeNav }) {
   const assets = assetPrefix(depth);
   const home = homeHref(depth);
   const group = GROUP_URLS.map((url) => {
     const current = url.includes(site.domain);
     return `<li><a href="${url}"${current ? ' aria-current="page"' : ""}>${url}</a></li>`;
   }).join("\n");
+
+  const navItems = theme.nav
+    .map((label, i) => {
+      const key = theme.navHrefs[i];
+      const href = key === "faq" ? "faq.html" : `${key}/index.html`;
+      return `<li><a href="${rel(depth, href)}"${activeNav === key ? ' aria-current="page"' : ""}>${esc(label)}</a></li>`;
+    })
+    .join("\n");
 
   return `<!DOCTYPE html>
 <html lang="id">
@@ -98,6 +108,7 @@ function layout({ site, depth, title, description, canonical, heading, body, sch
   <meta name="description" content="${esc(description)}">
   <meta name="keywords" content="${esc(site.keyword)}">
   <link rel="canonical" href="${esc(canonical)}">
+  <link rel="icon" href="${assets}/favicon.svg" type="image/svg+xml">
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(description)}">
   <meta property="og:type" content="website">
@@ -105,22 +116,18 @@ function layout({ site, depth, title, description, canonical, heading, body, sch
   <meta name="theme-color" content="#07090F">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=Saira+Condensed:wght@600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link href="${theme.fontUrl}" rel="stylesheet">
   <link rel="stylesheet" href="${assets}/css/site.css">
   ${schema ? `<script type="application/ld+json">${schema}</script>` : ""}
 </head>
-<body class="${site.accent}">
+<body class="${theme.themeClass}">
   <header class="site-header">
     <div class="wrap nav-row">
-      <a class="brand-link" href="${home}" aria-label="Superdewa home">
+      <a class="brand-link" href="${home}" aria-label="${esc(site.name)}">
         <img src="${assets}/svg/logo-superdewa.svg" width="200" height="38" alt="Superdewa">
       </a>
       <ul class="nav-links">
-        <li><a href="${rel(depth, "glosarium/index.html")}"${activeNav === "glosarium" ? ' aria-current="page"' : ""}>Glosarium</a></li>
-        <li><a href="${rel(depth, "panduan/index.html")}"${activeNav === "panduan" ? ' aria-current="page"' : ""}>Panduan</a></li>
-        <li><a href="${rel(depth, "game/index.html")}"${activeNav === "game" ? ' aria-current="page"' : ""}>Topik</a></li>
-        <li><a href="${rel(depth, "tips/index.html")}"${activeNav === "tips" ? ' aria-current="page"' : ""}>Tips</a></li>
-        <li><a href="${rel(depth, "faq.html")}"${activeNav === "faq" ? ' aria-current="page"' : ""}>FAQ</a></li>
+        ${navItems}
       </ul>
     </div>
   </header>
@@ -135,16 +142,17 @@ function layout({ site, depth, title, description, canonical, heading, body, sch
           ${group}
         </ul>
       </nav>
-      <p class="disclaimer">Konten edukasi Superdewa (${esc(site.nav)}). Main bijak, batasi waktu & budget. 18+. Bukan jaminan kemenangan.</p>
+      <p class="disclaimer">${esc(site.name)} — konten edukasi. Main bijak, batasi waktu & budget. 18+. Bukan jaminan kemenangan.</p>
     </div>
   </footer>
 </body>
 </html>`;
 }
 
-function buildHome(site) {
+function buildHome(site, theme) {
   const depth = 0;
   const canonical = `https://${site.domain}/`;
+  const hs = theme.homeSections;
   const gCards = site.glossaries
     .slice(0, 6)
     .map((raw) => {
@@ -160,6 +168,16 @@ function buildHome(site) {
     })
     .join("\n");
 
+  const steps = hs.steps
+    .map(([t, p]) => `<div class="step"><h3>${esc(t)}</h3><p>${esc(p)}</p></div>`)
+    .join("\n");
+  const faqs = hs.faqs
+    .map(
+      ([q, a], i) =>
+        `<details${i === 0 ? " open" : ""}><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`
+    )
+    .join("\n");
+
   const schema = JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -173,16 +191,16 @@ function buildHome(site) {
   const body = `
   <section class="hero">
     <div class="wrap hero-grid">
-      <div class="reveal">
+      <div>
         <img class="hero-brand" src="assets/svg/logo-superdewa.svg" width="420" height="80" alt="Superdewa">
         <h1>${esc(site.pillarH1)}</h1>
         <p class="hero-lead">${esc(site.pillarDek)}</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="glosarium/index.html">Buka Glosarium</a>
-          <a class="btn btn-secondary" href="panduan/index.html">Lihat Panduan</a>
+          <a class="btn btn-primary" href="glosarium/index.html">${esc(theme.ctaPrimary)}</a>
+          <a class="btn btn-secondary" href="panduan/index.html">${esc(theme.ctaSecondary)}</a>
         </div>
       </div>
-      <div class="hero-art reveal" aria-hidden="true">
+      <div class="hero-art" aria-hidden="true">
         <img src="assets/svg/heroes/${site.hero}" width="520" height="360" alt="">
       </div>
     </div>
@@ -191,53 +209,50 @@ function buildHome(site) {
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Apa ini?</h2>
-        <p>${esc(site.about)} Fokusnya edukasi — biar kamu melek istilah, bukan kejar janji palsu.</p>
+        <h2>${esc(hs.introH2)}</h2>
+        <p>${esc(hs.introP)}</p>
       </div>
-      <div class="steps">
-        <div class="step"><h3>Pahami istilah</h3><p>Glosarium biar keyword gak cuma lewat di telinga.</p></div>
-        <div class="step"><h3>Ikuti panduan</h3><p>Step praktis buat approach yang lebih sehat.</p></div>
-        <div class="step"><h3>Main dengan batas</h3><p>Timer + budget. Seru boleh, dramatize jangan.</p></div>
+      <div class="section-head" style="margin-top:1.5rem">
+        <h2>${esc(hs.stepsH2)}</h2>
       </div>
+      <div class="steps">${steps}</div>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Glosarium cepat</h2>
-        <p>Istilah yang paling sering bikin pemula bingung — langsung klik.</p>
+        <h2>${esc(hs.glossH2)}</h2>
+        <p>${esc(hs.glossP)}</p>
       </div>
       <div class="link-grid">${gCards}</div>
-      <p style="margin-top:1rem"><a href="glosarium/index.html">Lihat semua istilah →</a></p>
+      <p style="margin-top:1rem"><a href="glosarium/index.html">${esc(theme.nav[0])} lengkap →</a></p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Panduan pilihan</h2>
-        <p>Konten how-to yang SEO-friendly tapi tetap kece dibaca.</p>
+        <h2>${esc(hs.guideH2)}</h2>
+        <p>${esc(hs.guideP)}</p>
       </div>
       <div class="link-grid">${guideCards}</div>
-      <p style="margin-top:1rem"><a href="panduan/index.html">Semua panduan →</a></p>
+      <p style="margin-top:1rem"><a href="panduan/index.html">${esc(theme.nav[1])} lengkap →</a></p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap faq">
       <div class="section-head">
-        <h2>FAQ cepat</h2>
-        <p>Yang orang sering nanya soal hub ${esc(site.nav)}.</p>
+        <h2>${esc(hs.faqH2)}</h2>
       </div>
-      <details open><summary>Ini situs judi langsung?</summary><p>Ini hub edukasi Superdewa soal ${esc(site.topic)}. Fokusnya pemahaman & kebiasaan sehat.</p></details>
-      <details><summary>Bahasanya kenapa santai banget?</summary><p>Biar Gen Z betah baca, tapi tetap akurat. SEO fun ≠ spam keyword.</p></details>
-      <details><summary>Ke mana lagi setelah ini?</summary><p>Jelajahi glosarium, tips, lalu cek Superdewa Group di footer buat topik lain.</p></details>
+      ${faqs}
     </div>
   </section>`;
 
   return layout({
     site,
+    theme,
     depth,
     title: site.pillarTitle,
     description: site.pillarDek,
@@ -248,7 +263,7 @@ function buildHome(site) {
   });
 }
 
-function buildIndexPage(site, kind, items, folder, heading, intro) {
+function buildIndexPage(site, theme, kind, items, folder) {
   const depth = 1;
   const canonical = `https://${site.domain}/${folder}/`;
   const kindMap = {
@@ -257,6 +272,7 @@ function buildIndexPage(site, kind, items, folder, heading, intro) {
     tips: "tip",
     game: "game",
   };
+  const [heading, intro] = theme.indexLabels[folder];
   const cards = items
     .map((raw) => {
       const item = enrichItem(raw, kindMap[kind] || "game", site);
@@ -271,7 +287,7 @@ function buildIndexPage(site, kind, items, folder, heading, intro) {
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <h1 style="font-family:var(--font-display);text-transform:uppercase;letter-spacing:.03em;font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 .5rem">${esc(heading)}</h1>
+        <h1 style="font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 .5rem">${esc(heading)}</h1>
         <p>${esc(intro)}</p>
       </div>
       <div class="link-grid">${cards}</div>
@@ -280,8 +296,9 @@ function buildIndexPage(site, kind, items, folder, heading, intro) {
 
   return layout({
     site,
+    theme,
     depth,
-    title: `${heading} | ${site.name} Superdewa`,
+    title: `${heading} | ${site.name}`,
     description: intro,
     canonical,
     body,
@@ -289,12 +306,23 @@ function buildIndexPage(site, kind, items, folder, heading, intro) {
   });
 }
 
-function buildArticle(site, raw, kind, folder) {
+function buildArticle(site, theme, raw, kind, folder) {
   const item = enrichItem(raw, kind, site);
-  // /{folder}/{slug}.html is only one level below site root
   const depth = 1;
   const canonical = `https://${site.domain}/${folder}/${item.slug}.html`;
-  const folderLabel = folder === "glosarium" ? "Glosarium" : folder === "panduan" ? "Panduan" : folder === "tips" ? "Tips" : "Topik";
+  const folderLabel = theme.indexLabels[folder][0];
+  const relatedH2 = {
+    slot: "Lanjut baca biar makin melek slot",
+    pg: "Materi PG Soft terkait",
+    pp: "Lanjutan buat yang lagi dalemin PP",
+    habanero: "Konten Habanero yang nyambung",
+    microgaming: "Bacaan MG berikutnya",
+    nolimit: "Masih seputar risiko NLC",
+    live: "Materi meja yang relevan",
+    crash: "Modul crash terkait",
+    sports: "Slip knowledge terkait",
+    play: "Lanjutan kontrol diri",
+  }[site.id] || "Bacaan terkait";
 
   const schema = JSON.stringify({
     "@context": "https://schema.org",
@@ -315,14 +343,14 @@ function buildArticle(site, raw, kind, folder) {
         <span>${esc(item.label)}</span>
       </nav>
       <header class="article-header">
-        <div class="meta-chip"><span>${esc(site.nav)}</span><span>${esc(item.keyword)}</span></div>
+        <div class="meta-chip"><span>${esc(site.name)}</span><span>${esc(item.keyword)}</span></div>
         <h1>${esc(item.h1)}</h1>
         <p class="dek">${esc(item.dek)}</p>
       </header>
       <div class="prose">
         ${buildProse(item, site)}
         <div class="related">
-          <h2>Bacaan terkait</h2>
+          <h2>${esc(relatedH2)}</h2>
           <div class="link-grid">${relatedLinks(site, item, depth)}</div>
         </div>
       </div>
@@ -332,6 +360,7 @@ function buildArticle(site, raw, kind, folder) {
   return {
     html: layout({
       site,
+      theme,
       depth,
       title: item.title,
       description: item.description || item.dek,
@@ -344,36 +373,34 @@ function buildArticle(site, raw, kind, folder) {
   };
 }
 
-function buildStaticInfo(site, page) {
+function buildStaticInfo(site, theme, page) {
   const depth = 0;
   const canonical = `https://${site.domain}/${page}.html`;
+  const hs = theme.homeSections;
   let h1, dek, content;
   if (page === "faq") {
-    h1 = `FAQ ${site.nav}`;
-    dek = `Pertanyaan yang paling sering muncul soal ${site.topic}, dijawab tanpa basa-basi berlebih.`;
-    content = `
-      <div class="faq">
-        <details open><summary>Apa tujuan situs ini?</summary><p>${esc(site.about)}</p></details>
-        <details><summary>Apakah ini menjamin menang?</summary><p>Tidak. Semua konten bersifat edukasi & hiburan. Risiko tetap ada.</p></details>
-        <details><summary>Untuk siapa konten ini?</summary><p>Pemula sampai intermediate yang mau paham istilah & kebiasaan main lebih sehat.</p></details>
-        <details><summary>Kenapa ada Superdewa Group di footer?</summary><p>Itu navigasi antar hub edukasi Superdewa (slot, provider, live, crash, sports, responsible play).</p></details>
-        <details><summary>Bahasa kontennya kenapa Gen Z banget?</summary><p>Biar engagement enak, tetap jelas, dan gak kaku — sambil tetap SEO-friendly.</p></details>
-        <details><summary>Di mana tips bermain bertanggung jawab?</summary><p>Kunjungi <a href="https://superdewa-play.com/">https://superdewa-play.com/</a> dan selalu pakai batas waktu/uang.</p></details>
-      </div>`;
+    h1 = hs.faqH2;
+    dek = `Jawaban spesifik seputar ${site.topic} di ${site.name}.`;
+    content = `<div class="faq">${hs.faqs
+      .map(
+        ([q, a], i) =>
+          `<details${i === 0 ? " open" : ""}><summary>${esc(q)}</summary><p>${esc(a)}</p></details>`
+      )
+      .join("\n")}</div>`;
   } else if (page === "tentang") {
     h1 = `Tentang ${site.name}`;
     dek = site.about;
     content = `
-      <p>Superdewa membangun hub edukasi biar pemain lebih melek mekanik ${esc(site.topic)}. Bukan soft-sell berisik — lebih ke “paham dulu, baru main dengan kepala dingin”.</p>
-      <p>Design-nya dark, cepat, minimalis, dengan aksen brand biru–merah–petir. Kontennya Bahasa Indonesia yang fun, scannable, dan ramah SEO.</p>
-      <p>Semua halaman saling terhubung lewat glosarium, panduan, topik, tips, dan footer <strong>Superdewa Group</strong>.</p>`;
+      <p>${esc(hs.introP)}</p>
+      <p>${esc(site.about)}</p>
+      <p>Situs ini berdiri sendiri dengan fokus ${esc(site.topic)}. Footer Superdewa Group hanya penghubung ke hub edukasi lain.</p>`;
   } else {
-    h1 = "Kontak & Disclaimer";
-    dek = "Catatan penting soal konten edukasi Superdewa.";
+    h1 = `Disclaimer ${site.name}`;
+    dek = `Catatan penting sebelum memakai materi ${site.topic}.`;
     content = `
-      <p>Hub ini bersifat informasi/edukasi. Pastikan kamu 18+. Main hanya dengan budget hiburan.</p>
-      <p>Kalau butuh arah ke topik lain, pakai navigasi Superdewa Group di footer (naked URL).</p>
-      <p>Untuk panduan kontrol diri, buka <a href="https://superdewa-play.com/">https://superdewa-play.com/</a>.</p>`;
+      <p>Konten di ${esc(site.domain)} bersifat edukasi. Usia 18+. Main hanya dengan budget hiburan.</p>
+      <p>Untuk kontrol diri, kunjungi <a href="https://superdewa-play.com/">https://superdewa-play.com/</a>.</p>
+      <p>Hub lain ada di navigasi Superdewa Group (naked URL) di footer.</p>`;
   }
 
   const body = `
@@ -391,8 +418,9 @@ function buildStaticInfo(site, page) {
   return {
     html: layout({
       site,
+      theme,
       depth,
-      title: `${h1} | Superdewa`,
+      title: `${h1} | ${site.name}`,
       description: dek,
       canonical,
       body,
@@ -411,66 +439,69 @@ Sitemap: https://${domain}/sitemap.xml
 }
 
 function buildSite(site) {
+  const theme = getTheme(site.id);
+  if (!theme) throw new Error(`Missing theme for ${site.id}`);
   const out = path.join(SITES_DIR, site.domain);
   ensureDir(out);
   copyDir(path.join(SHARED, "css"), path.join(out, "assets", "css"));
   copyDir(path.join(SHARED, "svg"), path.join(out, "assets", "svg"));
+  write(path.join(out, "assets", "favicon.svg"), faviconSvg(theme.favicon));
 
   const urls = [];
 
-  write(path.join(out, "index.html"), buildHome(site));
+  write(path.join(out, "index.html"), buildHome(site, theme));
   urls.push(`https://${site.domain}/`);
 
   write(
     path.join(out, "glosarium", "index.html"),
-    buildIndexPage(site, "glosarium", site.glossaries, "glosarium", `Glosarium ${site.topic}`, `Kumpulan istilah ${site.topic} yang dijelasin biar gak muter-muter.`)
+    buildIndexPage(site, theme, "glosarium", site.glossaries, "glosarium")
   );
   urls.push(`https://${site.domain}/glosarium/`);
 
   for (const raw of site.glossaries) {
-    const { html, url } = buildArticle(site, raw, "glossary", "glosarium");
+    const { html, url } = buildArticle(site, theme, raw, "glossary", "glosarium");
     write(path.join(out, "glosarium", `${raw[0]}.html`), html);
     urls.push(url);
   }
 
   write(
     path.join(out, "panduan", "index.html"),
-    buildIndexPage(site, "panduan", site.guides, "panduan", `Panduan ${site.topic}`, `How-to praktis seputar ${site.topic} dengan tone santai dan langkah jelas.`)
+    buildIndexPage(site, theme, "panduan", site.guides, "panduan")
   );
   urls.push(`https://${site.domain}/panduan/`);
 
   for (const raw of site.guides) {
-    const { html, url } = buildArticle(site, raw, "guide", "panduan");
+    const { html, url } = buildArticle(site, theme, raw, "guide", "panduan");
     write(path.join(out, "panduan", `${raw[0]}.html`), html);
     urls.push(url);
   }
 
   write(
     path.join(out, "game", "index.html"),
-    buildIndexPage(site, "game", site.games, "game", `Topik ${site.topic}`, `Breakdown topik/game pilihan biar kamu punya mental model sebelum gas.`)
+    buildIndexPage(site, theme, "game", site.games, "game")
   );
   urls.push(`https://${site.domain}/game/`);
 
   for (const raw of site.games) {
-    const { html, url } = buildArticle(site, raw, "game", "game");
+    const { html, url } = buildArticle(site, theme, raw, "game", "game");
     write(path.join(out, "game", `${raw[0]}.html`), html);
     urls.push(url);
   }
 
   write(
     path.join(out, "tips", "index.html"),
-    buildIndexPage(site, "tips", site.tips, "tips", `Tips ${site.topic}`, `Habit kecil yang bikin session lebih terkendali dan tetap seru.`)
+    buildIndexPage(site, theme, "tips", site.tips, "tips")
   );
   urls.push(`https://${site.domain}/tips/`);
 
   for (const raw of site.tips) {
-    const { html, url } = buildArticle(site, raw, "tip", "tips");
+    const { html, url } = buildArticle(site, theme, raw, "tip", "tips");
     write(path.join(out, "tips", `${raw[0]}.html`), html);
     urls.push(url);
   }
 
   for (const page of ["faq", "tentang", "kontak"]) {
-    const { html, url } = buildStaticInfo(site, page);
+    const { html, url } = buildStaticInfo(site, theme, page);
     write(path.join(out, `${page}.html`), html);
     urls.push(url);
   }
