@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 140" role="img" aria-label="Superdewa">
+  <defs>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5AD7FF"/>
+      <stop offset="45%" stop-color="#00ADEF"/>
+      <stop offset="100%" stop-color="#0077B6"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF5A5F"/>
+      <stop offset="45%" stop-color="#ED1C24"/>
+      <stop offset="100%" stop-color="#A50F14"/>
+    </linearGradient>
+    <linearGradient id="boltGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFF59D"/>
+      <stop offset="100%" stop-color="#FFF200"/>
+    </linearGradient>
+  </defs>
+  <g font-family="Arial Black, Impact, Haettenschweiler, sans-serif" font-size="92" font-style="italic" font-weight="900" letter-spacing="-3">
+    <!-- Navy outer punch -->
+    <text x="24" y="98" fill="#1B1464" stroke="#1B1464" stroke-width="16" stroke-linejoin="round">SUPER</text>
+    <text x="370" y="98" fill="#1B1464" stroke="#1B1464" stroke-width="16" stroke-linejoin="round">DEWA</text>
+    <!-- White outline -->
+    <text x="24" y="98" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round">SUPER</text>
+    <text x="370" y="98" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round">DEWA</text>
+    <!-- Fills -->
+    <text x="24" y="98" fill="url(#blueGrad)">SUPER</text>
+    <text x="370" y="98" fill="url(#redGrad)">DEWA</text>
+  </g>
+  <!-- Lightning bolt -->
+  <g transform="translate(318,6)">
+    <path d="M34 2 L6 62 H28 L12 126 L58 48 H34 L52 2 Z" fill="#1B1464"/>
+    <path d="M34 6 L10 60 H30 L16 116 L52 50 H32 L48 6 Z" fill="#FFFFFF"/>
+    <path d="M34 10 L14 58 H30 L20 106 L48 52 H30 L46 10 Z" fill="url(#boltGrad)"/>
+  </g>
+</svg>

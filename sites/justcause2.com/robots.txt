@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://justcause2.com/sitemap.xml

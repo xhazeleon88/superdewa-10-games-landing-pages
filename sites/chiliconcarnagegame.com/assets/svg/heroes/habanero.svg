@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+  <rect width="520" height="360" rx="28" fill="#1a1208"/>
+  <ellipse cx="260" cy="200" rx="140" ry="70" fill="#2a1c0c" stroke="#FFB020" stroke-width="3"/>
+  <path d="M160 190c20-50 60-90 100-90s80 40 100 90" fill="#3a2810" stroke="#FFB020" stroke-width="3"/>
+  <circle cx="220" cy="170" r="14" fill="#FFB020"/>
+  <circle cx="300" cy="165" r="10" fill="#E53945"/>
+  <text x="260" y="60" text-anchor="middle" fill="#FFB020" font-family="Arial Black,sans-serif" font-size="28" font-style="italic">HABANERO</text>
+</svg>

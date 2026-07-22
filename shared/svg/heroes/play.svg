@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+  <rect width="520" height="360" rx="28" fill="#0a121c"/>
+  <path d="M260 70c-55 35-90 70-90 120 0 55 40 95 90 110 50-15 90-55 90-110 0-50-35-85-90-120z" fill="#122033" stroke="#8EC8FF" stroke-width="4"/>
+  <path d="M230 175 l20 20 40-45" stroke="#FFD400" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="260" y="330" text-anchor="middle" fill="#8EC8FF" font-family="Arial Black,sans-serif" font-size="24" font-style="italic">PLAY SAFE</text>
+</svg>

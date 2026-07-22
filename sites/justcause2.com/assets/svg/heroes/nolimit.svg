@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+  <rect width="520" height="360" rx="28" fill="#16080f"/>
+  <path d="M80 260 L180 120 L240 200 L320 80 L440 260 Z" fill="none" stroke="#FF4D6D" stroke-width="5" stroke-linejoin="round"/>
+  <circle cx="320" cy="80" r="12" fill="#FFD400"/>
+  <text x="260" y="310" text-anchor="middle" fill="#FF4D6D" font-family="Arial Black,sans-serif" font-size="26" font-style="italic">NOLIMIT</text>
+</svg>
