@@ -7,6 +7,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { sites, GROUP_URLS } from "./sites-data.mjs";
+import { enrichItem, buildProse } from "./content-engine.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -53,45 +54,14 @@ function rel(depth, target) {
   return "../".repeat(depth) + target.replace(/^\//, "");
 }
 
-function titleCaseLabel(label) {
-  return label;
-}
-
-function expandItem([slug, label, keyword], kind, site) {
-  const topic = site.topic;
-  const h1Map = {
-    glossary: `${label}: artinya apa, biar gak cuma dengerin doang`,
-    guide: `${label} — panduan santai tapi ngena`,
-    game: `${label}: breakdown biar mainnya lebih sadar`,
-    tip: `Tips: ${label}`,
-  };
-  const dekMap = {
-    glossary: `Penjelasan ${label} di dunia ${topic} dengan bahasa Gen Z yang jelas, plus contoh biar nempel di kepala.`,
-    guide: `Step-by-step ${label} buat kamu yang pengen paham mekanik ${topic} tanpa drama overclaim.`,
-    game: `Kupasan ${label}: vibe, mekanik inti, dan cara approach yang lebih sehat.`,
-    tip: `Tips praktis soal ${label} biar session ${topic} kamu tetap terkendali.`,
-  };
-  return {
-    slug,
-    label,
-    keyword,
-    kind,
-    title: `${label} | ${site.name} Superdewa`,
-    h1: h1Map[kind],
-    dek: dekMap[kind],
-    blurb: `${label} adalah bagian penting dalam pemahaman ${topic} yang dibahas secara edukatif di Superdewa.`,
-  };
-}
-
 function relatedLinks(site, current, depth) {
   const pool = [
-    ...site.glossaries.map((x) => ({ ...expandItem(x, "glossary", site), href: `glosarium/${x[0]}.html` })),
-    ...site.guides.map((x) => ({ ...expandItem(x, "guide", site), href: `panduan/${x[0]}.html` })),
-    ...site.games.map((x) => ({ ...expandItem(x, "game", site), href: `game/${x[0]}.html` })),
-    ...site.tips.map((x) => ({ ...expandItem(x, "tip", site), href: `tips/${x[0]}.html` })),
+    ...site.glossaries.map((x) => ({ ...enrichItem(x, "glossary", site), href: `glosarium/${x[0]}.html` })),
+    ...site.guides.map((x) => ({ ...enrichItem(x, "guide", site), href: `panduan/${x[0]}.html` })),
+    ...site.games.map((x) => ({ ...enrichItem(x, "game", site), href: `game/${x[0]}.html` })),
+    ...site.tips.map((x) => ({ ...enrichItem(x, "tip", site), href: `tips/${x[0]}.html` })),
   ].filter((p) => p.slug !== current.slug);
 
-  // deterministic pseudo-random pick
   let seed = [...current.slug].reduce((a, c) => a + c.charCodeAt(0), 0);
   const picks = [];
   const used = new Set();
@@ -109,91 +79,6 @@ function relatedLinks(site, current, depth) {
         `<a class="link-card" href="${rel(depth, p.href)}"><strong>${esc(p.label)}</strong><span>${esc(p.dek)}</span></a>`
     )
     .join("\n");
-}
-
-function proseFor(item, site) {
-  const { label, kind, keyword } = item;
-  const topic = site.topic;
-  const paragraphs = [];
-
-  paragraphs.push(
-    `<p>Kalau kamu sering denger istilah <strong>${esc(label)}</strong> pas ngobrolin ${esc(topic)}, tapi masih “hmm… apaan tuh?”, page ini buat kamu. Kita bahas santai, tetap SEO-clear, tanpa gaya guru galak.</p>`
-  );
-
-  paragraphs.push(`<div class="def-box"><strong>Definisi cepat</strong><p>${esc(item.blurb)} Singkatnya: ini konsep yang bantu kamu baca situasi sebelum keputusan impulsif muncul.</p></div>`);
-
-  if (kind === "glossary") {
-    paragraphs.push(`<h2>Kenapa ${esc(label)} penting?</h2>`);
-    paragraphs.push(
-      `<p>Karena banyak orang main dulu, paham belakangan. Padahal ngerti <em>${esc(keyword)}</em> itu ngebantu kamu set ekspektasi. Bukan buat ngejar “pola rahasia”, tapi biar kamu sadar lagi main game tipe apa.</p>`
-    );
-    paragraphs.push(`<h2>Cara ngerasain konsep ini di game</h2>`);
-    paragraphs.push(
-      `<ol><li>Buka info/paytable atau aturan ringkas dulu.</li><li>Cari bagian yang nyebut ${esc(label)} atau konsep sejenis.</li><li>Bandingin sama budget & mood kamu hari ini.</li><li>Baru putuskan mau lanjut, ganti game, atau istirahat.</li></ol>`
-    );
-    paragraphs.push(`<h2>Salah paham yang sering kejadian</h2>`);
-    paragraphs.push(
-      `<p>Salah paham klasik: menganggap ${esc(label)} sebagai jaminan hasil. Nope. Di ${esc(topic)}, angka dan fitur itu kerangka probabilitas, bukan ramalan harian. Kalau ada yang bilang “pasti”, itu red flag.</p>`
-    );
-    paragraphs.push(`<h2>Contoh mindset yang lebih sehat</h2>`);
-    paragraphs.push(
-      `<p>“Oke, aku paham ${esc(label)}. Berarti session ini aku batasi waktu & budget.” Itu vibe yang kita dorong di Superdewa — gen Z cool, tapi tetap waras.</p>`
-    );
-  } else if (kind === "guide") {
-    paragraphs.push(`<h2>Sebelum mulai</h2>`);
-    paragraphs.push(
-      `<p>Siapkan tiga hal: budget hiburan yang rela hilang, timer session, dan niat “belajar mekanik” bukan “balas dendam”. ${esc(label)} jadi jauh lebih berguna kalau otaknya masih fresh.</p>`
-    );
-    paragraphs.push(`<h2>Langkah praktis</h2>`);
-    paragraphs.push(
-      `<ol><li>Pahami tujuan page ini: ${esc(label)} dalam konteks ${esc(topic)}.</li><li>Cek aturan / info game terkait keyword <strong>${esc(keyword)}</strong>.</li><li>Coba ritme pelan di awal — jangan langsung max bet.</li><li>Evaluasi tiap 10–15 menit: masih seru atau udah tilt?</li><li>Stop sesuai rencana, meski lagi “kerasa hoki”.</li></ol>`
-    );
-    paragraphs.push(`<h2>Yang sebaiknya dihindari</h2>`);
-    paragraphs.push(
-      `<ul><li>Naikkan taruhan habis kalah streak.</li><li>Percaya mitos jam/pola tanpa dasar.</li><li>Main sambil capek atau emosi.</li><li>Pinjam uang buat “satu kali lagi”.</li></ul>`
-    );
-    paragraphs.push(`<div class="tip-box"><strong>Pro tip chill</strong><p>Screenshot atau catat hasil session. Otak suka lupa kerugian dan cuma inget momen menang. Catatan jujur = self-awareness.</p></div>`);
-  } else if (kind === "game") {
-    paragraphs.push(`<h2>Vibe ${esc(label)}</h2>`);
-    paragraphs.push(
-      `<p>${esc(label)} masuk radar karena karakternya yang khas di ekosistem ${esc(topic)}. Sebelum kejar highlight orang lain di TL, pahami dulu tempo & fitur intinya.</p>`
-    );
-    paragraphs.push(`<h2>Mekanik yang perlu kamu scan</h2>`);
-    paragraphs.push(
-      `<ul><li>Cara menang dasar (line, ways, cluster, odds, cash-out — tergantung jenis).</li><li>Fitur bonus / momen “spike” yang bikin adrenalina naik.</li><li>Volatilitas atau ritme risiko secara kasar.</li><li>Info max potential vs realita session pendek.</li></ul>`
-    );
-    paragraphs.push(`<h2>Approach recommended</h2>`);
-    paragraphs.push(
-      `<p>Mulai kecil. Baca dulu. Kalau ${esc(label)} terasa terlalu liar buat mood kamu hari ini, switch. Itu bukan “lemah” — itu melek risiko. Keyword yang sering dicari orang: <strong>${esc(keyword)}</strong>.</p>`
-    );
-    paragraphs.push(`<h2>Kapan sebaiknya skip</h2>`);
-    paragraphs.push(
-      `<p>Skip kalau kamu lagi kejar rugi, belum set batas, atau cuma FOMO karena konten orang lain. ${esc(topic)} itu hiburan — kalau udah kerasa pekerjaan emosional, istirahat.</p>`
-    );
-  } else {
-    paragraphs.push(`<h2>Kenapa tips ini worth it</h2>`);
-    paragraphs.push(
-      `<p>${esc(label)} kedengerannya simpel, tapi impact-nya ke session ${esc(topic)} bisa gede. Kebiasaan kecil > “strategi rahasia”.</p>`
-    );
-    paragraphs.push(`<h2>Cara apply hari ini</h2>`);
-    paragraphs.push(
-      `<ol><li>Tulis batas sebelum mulai (waktu + uang).</li><li>Terapkan ${esc(label)} sebagai aturan non-negotiable.</li><li>Kalau dilanggar, session selesai — no debate.</li></ol>`
-    );
-    paragraphs.push(`<div class="tip-box"><strong>Reminder</strong><p>Kalau tips terasa “ribet”, itu biasanya karena otak lagi pengen impuls. Balik ke niat awal: hiburan terkendali.</p></div>`);
-  }
-
-  paragraphs.push(`<h2>FAQ singkat soal ${esc(label)}</h2>`);
-  paragraphs.push(`<div class="faq">
-    <details open><summary>Apakah ${esc(label)} bikin menang terus?</summary><p>Tidak. Ini kerangka pemahaman, bukan mesin printer uang. Hasil tetap berisiko.</p></details>
-    <details><summary>Harus hafal semua istilah ${esc(topic)} dulu?</summary><p>Enggak. Hafalin yang sering muncul, lalu belajar bertahap lewat glosarium Superdewa.</p></details>
-    <details><summary>Cocok buat pemula?</summary><p>Ya — page ini memang disusun biar pemula gak overwhelm, tapi tetap hormati risiko.</p></details>
-  </div>`);
-
-  paragraphs.push(
-    `<p>Mau lanjut eksplor? Cek glosarium & panduan lain di hub <strong>${esc(site.name)}</strong>, atau loncat ke jaringan edukasi di footer Superdewa Group.</p>`
-  );
-
-  return paragraphs.join("\n");
 }
 
 function layout({ site, depth, title, description, canonical, heading, body, schema, activeNav }) {
@@ -262,11 +147,17 @@ function buildHome(site) {
   const canonical = `https://${site.domain}/`;
   const gCards = site.glossaries
     .slice(0, 6)
-    .map(([slug, label]) => `<a class="link-card" href="glosarium/${slug}.html"><strong>${esc(label)}</strong><span>Arti & contoh biar langsung kebayang.</span></a>`)
+    .map((raw) => {
+      const item = enrichItem(raw, "glossary", site);
+      return `<a class="link-card" href="glosarium/${item.slug}.html"><strong>${esc(item.label)}</strong><span>${esc(item.dek)}</span></a>`;
+    })
     .join("\n");
   const guideCards = site.guides
     .slice(0, 6)
-    .map(([slug, label]) => `<a class="link-card" href="panduan/${slug}.html"><strong>${esc(label)}</strong><span>Step-by-step yang enak diikutin.</span></a>`)
+    .map((raw) => {
+      const item = enrichItem(raw, "guide", site);
+      return `<a class="link-card" href="panduan/${item.slug}.html"><strong>${esc(item.label)}</strong><span>${esc(item.dek)}</span></a>`;
+    })
     .join("\n");
 
   const schema = JSON.stringify({
@@ -360,9 +251,15 @@ function buildHome(site) {
 function buildIndexPage(site, kind, items, folder, heading, intro) {
   const depth = 1;
   const canonical = `https://${site.domain}/${folder}/`;
+  const kindMap = {
+    glosarium: "glossary",
+    panduan: "guide",
+    tips: "tip",
+    game: "game",
+  };
   const cards = items
     .map((raw) => {
-      const item = expandItem(raw, kind === "glosarium" ? "glossary" : kind === "panduan" ? "guide" : kind === "tips" ? "tip" : "game", site);
+      const item = enrichItem(raw, kindMap[kind] || "game", site);
       return `<a class="link-card" href="${item.slug}.html"><strong>${esc(item.label)}</strong><span>${esc(item.dek)}</span></a>`;
     })
     .join("\n");
@@ -393,8 +290,9 @@ function buildIndexPage(site, kind, items, folder, heading, intro) {
 }
 
 function buildArticle(site, raw, kind, folder) {
-  const item = expandItem(raw, kind, site);
-  const depth = 2;
+  const item = enrichItem(raw, kind, site);
+  // /{folder}/{slug}.html is only one level below site root
+  const depth = 1;
   const canonical = `https://${site.domain}/${folder}/${item.slug}.html`;
   const folderLabel = folder === "glosarium" ? "Glosarium" : folder === "panduan" ? "Panduan" : folder === "tips" ? "Tips" : "Topik";
 
@@ -422,9 +320,9 @@ function buildArticle(site, raw, kind, folder) {
         <p class="dek">${esc(item.dek)}</p>
       </header>
       <div class="prose">
-        ${proseFor(item, site)}
+        ${buildProse(item, site)}
         <div class="related">
-          <h2>Related yang worth dibuka</h2>
+          <h2>Bacaan terkait</h2>
           <div class="link-grid">${relatedLinks(site, item, depth)}</div>
         </div>
       </div>
@@ -436,7 +334,7 @@ function buildArticle(site, raw, kind, folder) {
       site,
       depth,
       title: item.title,
-      description: item.dek,
+      description: item.description || item.dek,
       canonical,
       body,
       schema,
