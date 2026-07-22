@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Superdewa — Preview All Landing Pages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Saira+Condensed:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090F;
+      --surface: #161C2C;
+      --border: #243049;
+      --text: #F4F7FB;
+      --muted: #9AA6BF;
+      --blue: #2B9FE8;
+      --red: #E53945;
+      --bolt: #FFD400;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(43,159,232,.25), transparent 60%),
+        radial-gradient(700px 400px at 100% 0%, rgba(229,57,69,.18), transparent 55%),
+        var(--bg);
+      padding: 2rem 1.25rem 3rem;
+    }
+    .wrap { width: min(100%, 820px); margin: 0 auto; }
+    h1 {
+      font-family: "Saira Condensed", system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 .5rem;
+    }
+    .lead { color: var(--muted); margin: 0 0 1.75rem; max-width: 50ch; }
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: .75rem;
+      counter-reset: item;
+    }
+    li {
+      counter-increment: item;
+    }
+    a.card {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: .85rem;
+      align-items: center;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface) 92%, transparent);
+      color: var(--text);
+      text-decoration: none;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    a.card:hover {
+      transform: translateY(-2px);
+      border-color: color-mix(in srgb, var(--blue) 55%, var(--border));
+    }
+    a.card::before {
+      content: counter(item, decimal-leading-zero);
+      font-family: "Saira Condensed", system-ui, sans-serif;
+      color: var(--bolt);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    a.card strong {
+      display: block;
+      font-family: "Saira Condensed", system-ui, sans-serif;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: 1.15rem;
+    }
+    a.card span {
+      display: block;
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: .15rem;
+      word-break: break-all;
+    }
+    a.card em {
+      font-style: normal;
+      color: var(--blue);
+      font-size: .85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .note {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Superdewa Preview Hub</h1>
+    <p class="lead">Klik satu per satu buat buka homepage tiap landing page. Urut sesuai brief.</p>
+    <ol>
+      <li>
+        <a class="card" href="./superdewa-slot.com/index.html">
+          <div>
+            <strong>Slot Glosaries & How to Play</strong>
+            <span>superdewa-slot.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-pg.com/index.html">
+          <div>
+            <strong>PG Soft Games Guide</strong>
+            <span>superdewa-pg.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-pp.com/index.html">
+          <div>
+            <strong>Pragmatic Play Games Guide</strong>
+            <span>superdewa-pp.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-habanero.com/index.html">
+          <div>
+            <strong>Habanero Games Guide</strong>
+            <span>superdewa-habanero.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-microgaming.com/index.html">
+          <div>
+            <strong>Microgaming Games Guide</strong>
+            <span>superdewa-microgaming.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-nolimit.com/index.html">
+          <div>
+            <strong>Nolimit City Games Guide</strong>
+            <span>superdewa-nolimit.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-live.com/index.html">
+          <div>
+            <strong>Live Casino Games Tutorial</strong>
+            <span>superdewa-live.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-crash.com/index.html">
+          <div>
+            <strong>Crash Games Guide</strong>
+            <span>superdewa-crash.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-sports.com/index.html">
+          <div>
+            <strong>Sportsbook Guide</strong>
+            <span>superdewa-sports.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+      <li>
+        <a class="card" href="./superdewa-play.com/index.html">
+          <div>
+            <strong>Responsible Gambling Guide</strong>
+            <span>superdewa-play.com</span>
+          </div>
+          <em>Open →</em>
+        </a>
+      </li>
+    </ol>
+    <p class="note">Tip: setelah buka satu homepage, pakai tombol Back browser buat balik ke hub ini, lalu lanjut ke nomor berikutnya.</p>
+  </div>
+</body>
+</html>
