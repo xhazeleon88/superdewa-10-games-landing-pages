@@ -87,10 +87,11 @@ function layout({ site, theme, depth, title, description, canonical, body, schem
   const assets = assetPrefix(depth);
   const home = homeHref(depth);
   const group = GROUP_URLS.map((url) => {
+    const host = url.replace(/^https?:\/\//, "").replace(/\/$/, "");
     const current = url.includes(site.domain);
-    return `<li><a href="${url}"${current ? ' aria-current="page"' : ""}>${url}</a></li>`;
+    return `<li><a href="${url}"${current ? ' aria-current="page"' : ""}><span class="group-host">${esc(host)}</span></a></li>`;
   }).join("\n");
-  const official = `<li><a href="${OFFICIAL_LINK.href}">${esc(OFFICIAL_LINK.label)}</a></li>`;
+  const official = `<a class="official-link" href="${OFFICIAL_LINK.href}" rel="noopener noreferrer">${esc(OFFICIAL_LINK.label)}</a>`;
 
   const navItems = theme.nav
     .map((label, i) => {
@@ -136,15 +137,18 @@ function layout({ site, theme, depth, title, description, canonical, body, schem
     ${body}
   </main>
   <footer class="site-footer">
-    <div class="wrap">
+    <div class="wrap footer-inner">
       <nav class="group-nav" aria-labelledby="sd-group-title">
-        <h2 id="sd-group-title">Superdewa Group</h2>
-        <ul>
+        <div class="group-head">
+          <h2 id="sd-group-title">Superdewa Group</h2>
+          <p class="group-sub">Hub edukasi Superdewa — tautan antar situs</p>
+        </div>
+        <ul class="group-links">
           ${group}
-          ${official}
         </ul>
+        ${official}
       </nav>
-      <p class="disclaimer">${esc(site.name)} — konten edukasi. Main bijak, batasi waktu & budget. 18+. Bukan jaminan kemenangan.</p>
+      <p class="disclaimer">${esc(site.name)} — konten edukasi. Main bijak, batasi waktu &amp; budget. 18+. Bukan jaminan kemenangan.</p>
     </div>
   </footer>
 </body>
