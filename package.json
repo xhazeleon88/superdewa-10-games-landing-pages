@@ -1,0 +1,9 @@
+{
+  "name": "superdewa-10-games-landing-pages",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "rebuild": "rm -rf sites && node scripts/build.mjs"
+  }
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" fill="none" aria-hidden="true">
+  <rect width="520" height="360" rx="28" fill="#0d1408"/>
+  <path d="M70 280 C140 260, 180 120, 260 100 C340 80, 380 40, 450 30" stroke="#C6FF3D" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M70 280 C150 270, 220 220, 280 200" stroke="#FFD400" stroke-width="3" fill="none" opacity="0.5"/>
+  <circle cx="380" cy="55" r="10" fill="#FF2E4D"/>
+  <text x="260" y="330" text-anchor="middle" fill="#C6FF3D" font-family="Arial Black,sans-serif" font-size="28" font-style="italic">CRASH</text>
+</svg>
