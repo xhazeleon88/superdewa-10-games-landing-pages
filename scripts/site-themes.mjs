@@ -18,14 +18,14 @@ export const themes = {
     homeSections: {
       introH2: "Kenapa kamus slot ini ada?",
       introP:
-        "Biar kamu gak main sambil nebak-nebak istilah. Di sini fondasi slot dibahas lurus: RTP, scatter, volatilitas, sampai cara atur bet.",
+        "Agar kamu tidak main sambil nebak-nebak istilah. Di sini fondasi slot dibahas lurus: RTP, scatter, volatilitas, sampai cara atur bet.",
       stepsH2: "Alur belajar yang disarankan",
       steps: [
         ["Baca istilah inti", "Mulai dari RTP, wild, scatter, dan paytable."],
         ["Coba panduan praktis", "Ikuti cara atur bet & pilih volatilitas."],
         ["Kunci batas session", "Timer + stop-loss sebelum jari gas terus."],
       ],
-      glossH2: "Istilah yang paling sering bikin bingung",
+      glossH2: "Istilah yang paling sering membuat bingung",
       glossP: "Ini pintasan ke kamus—klik yang paling sering kamu dengar di obrolan.",
       guideH2: "Panduan buat yang baru pegang slot",
       guideP: "Bukan teori panjang. Lebih ke langkah yang bisa langsung dicoba.",
@@ -45,15 +45,15 @@ export const themes = {
         ],
         [
           "Kok sering dengar ‘pola gacor’?",
-          "Kebanyakan itu narasi. Hasil spin tetap acak; yang bisa kamu kontrol cuma budget dan durasi.",
+          "Kebanyakan itu narasi. Hasil spin tetap acak; yang bisa kamu kontrol hanya budget dan durasi.",
         ],
       ],
     },
     indexLabels: {
-      glosarium: ["Kamus Slot", "Kumpulan istilah slot yang dijelasin biar keputusanmu lebih sadar."],
+      glosarium: ["Kamus Slot", "Kumpulan istilah slot yang dijelasin agar keputusanmu lebih sadar."],
       panduan: ["Cara Main Slot", "Panduan langkah demi langkah tanpa overclaim."],
-      game: ["Tipe & Mekanik Slot", "Bedah tipe game biar kamu tahu lagi ngadepin ritme seperti apa."],
-      tips: ["Tips Session Slot", "Habit kecil biar spin tetap hiburan, bukan balas dendam."],
+      game: ["Tipe & Mekanik Slot", "Bedah tipe game agar kamu tahu lagi menghadapi ritme seperti apa."],
+      tips: ["Tips Session Slot", "Habit kecil agar spin tetap hiburan, bukan balas dendam."],
     },
     voice: "slot",
   },
@@ -72,15 +72,15 @@ export const themes = {
     homeSections: {
       introH2: "PG Soft itu soal ritme cascading",
       introP:
-        "Kalau kamu sering main Mahjong Ways atau Lucky Neko, paham multiplier trail & cascading bikin ekspektasi jauh lebih realistis.",
+        "Kalau kamu sering main Mahjong Ways atau Lucky Neko, paham multiplier trail & cascading membuat ekspektasi jauh lebih realistis.",
       stepsH2: "Cara eksplor PG Soft tanpa buru-buru",
       steps: [
         ["Pahami cascading", "Simbol hilang, yang baru jatuh—satu spin bisa lanjut."],
-        ["Baca multiplier trail", "Jangan cuma lihat angka besar di highlight orang."],
+        ["Baca multiplier trail", "Jangan hanya lihat angka besar di highlight orang."],
         ["Main portrait dengan sadar", "Nyaman di HP, tapi tetap set timer."],
       ],
       glossH2: "Istilah khas PG yang worth dihafal",
-      glossP: "Dari tumble sampai energy meter—biar UI PG gak terasa alien.",
+      glossP: "Dari tumble sampai energy meter—agar UI PG tidak terasa alien.",
       guideH2: "Guide judul & mekanik PG Soft",
       guideP: "Fokus ke cara baca fitur, bukan kejar klaim kemenangan.",
       faqH2: "FAQ seputar PG Soft",
@@ -106,8 +106,8 @@ export const themes = {
     indexLabels: {
       glosarium: ["Istilah PG Soft", "Kosakata cascading, trail, dan fitur khas PG."],
       panduan: ["Guide PG Soft", "Cara memahami judul dan mekanik tanpa drama."],
-      game: ["Judul PG Soft", "Breakdown game populer biar kamu pilih dengan sadar."],
-      tips: ["Habit Main PG", "Tips biar session portrait tetap terkendali."],
+      game: ["Judul PG Soft", "Breakdown game populer agar kamu pilih dengan sadar."],
+      tips: ["Habit Main PG", "Tips agar session portrait tetap terkendali."],
     },
     voice: "pg",
   },
@@ -126,7 +126,7 @@ export const themes = {
     homeSections: {
       introH2: "Pragmatic Play: tumble, ante, dan ekspektasi realistis",
       introP:
-        "Dari Gates of Olympus sampai Sweet Bonanza—situs ini fokus nerjemahin mekanik PP biar kamu gak cuma ikut highlight multiplier.",
+        "Dari Gates of Olympus sampai Sweet Bonanza—situs ini fokus menerjemahkan mekanik PP agar kamu tidak hanya ikut highlight multiplier.",
       stepsH2: "Tiga pintu masuk ke dunia PP",
       steps: [
         ["Kenali tumble", "Simbol menang hilang, peluang lanjut di spin yang sama."],
@@ -134,7 +134,7 @@ export const themes = {
         ["Set bankroll ketat", "High volatility PP butuh napas dan batas jelas."],
       ],
       glossH2: "Kosakata Pragmatic yang sering muncul",
-      glossP: "Ante bet, tumble, max win—dibahas biar gak salah arti.",
+      glossP: "Ante bet, tumble, max win—dibahas agar tidak salah arti.",
       guideH2: "Cara main title PP yang ramai dicari",
       guideP: "Guide praktis per mekanik dan per judul populer.",
       faqH2: "Tanya jawab Pragmatic Play",
@@ -180,17 +180,17 @@ export const themes = {
     homeSections: {
       introH2: "Habanero: klasik, feature-rich, vibe arcade",
       introP:
-        "Kalau kamu suka ritme yang gak selalu ‘modern glossy’, Habanero punya karakter sendiri—dari stacked symbols sampai gamble feature.",
+        "Kalau kamu suka ritme yang tidak selalu ‘modern glossy’, Habanero punya karakter sendiri—dari stacked symbols sampai gamble feature.",
       stepsH2: "Cara kenalan sama Habanero",
       steps: [
         ["Baca fitur klasik", "Stacked, expanding, pick bonus—beda nuansa."],
         ["Hati-hati gamble feature", "Double or nothing itu godaan, bukan kewajiban."],
-        ["Pilih tema yang nyaman", "Main lebih awet kalau visualnya gak bikin pusing."],
+        ["Pilih tema yang nyaman", "Main lebih awet kalau visualnya tidak membuat pusing."],
       ],
       glossH2: "Istilah Habanero yang sering kelewat",
-      glossP: "Supaya paytable Hab gak cuma dilewatin.",
+      glossP: "Supaya paytable Hab tidak hanya dilewatin.",
       guideH2: "Tutorial judul & fitur Habanero",
-      guideP: "Dari Koi Gate sampai Fa Cai Shen—dibahas biar mekaniknya kebaca.",
+      guideP: "Dari Koi Gate sampai Fa Cai Shen—dibahas agar mekaniknya terbaca.",
       faqH2: "FAQ Habanero",
       faqs: [
         [
@@ -253,7 +253,7 @@ export const themes = {
         ],
         [
           "Harus main taruhan besar agar jackpot jatuh?",
-          "Aturan tiap game beda. Yang pasti: jangan naikkan bet di luar bankroll hanya karena ‘kerasa mau jatuh’.",
+          "Aturan tiap game beda. Yang pasti: jangan naikkan bet di luar bankroll hanya karena ‘terasa mau jatuh’.",
         ],
         [
           "Apa itu must-drop?",
@@ -288,7 +288,7 @@ export const themes = {
     homeSections: {
       introH2: "Nolimit City: extreme volatility, mekanik x-series",
       introP:
-        "Kalau UI-nya terasa agresif, itu disengaja. Di sini kita translate xNudge, xWays, xBet biar kamu sadar risikonya sebelum masuk.",
+        "Kalau UI-nya terasa agresif, itu disengaja. Di sini kita translate xNudge, xWays, xBet agar kamu sadar risikonya sebelum masuk.",
       stepsH2: "Masuk Nolimit dengan protokol aman",
       steps: [
         ["Demo wajib", "Pelajari transformasi simbol tanpa tekanan uang."],
@@ -296,7 +296,7 @@ export const themes = {
         ["Session pendek", "Extreme volatility + session panjang = gampang tilt."],
       ],
       glossH2: "Kamus x-series Nolimit City",
-      glossP: "Supaya nama fitur gak cuma keren di telinga.",
+      glossP: "Supaya nama fitur tidak hanya keren di telinga.",
       guideH2: "Decode title & mekanik NLC",
       guideP: "Mental, Tombstone, Fire in the Hole—dibahas dari sisi risiko.",
       faqH2: "FAQ Nolimit City",
@@ -323,7 +323,7 @@ export const themes = {
       glosarium: ["Kamus x-Series", "xNudge, xWays, xBet, dan istilah extreme lain."],
       panduan: ["Decode Nolimit", "Panduan mekanik tanpa romantisasi risiko."],
       game: ["Title Extreme NLC", "Game dengan karakter tegas dan ayunan tajam."],
-      tips: ["Risk Rules", "Aturan main biar adrenaline tidak merusak budget."],
+      tips: ["Risk Rules", "Aturan main agar adrenaline tidak merusak budget."],
     },
     voice: "nolimit",
   },
@@ -349,7 +349,7 @@ export const themes = {
         ["Pahami pasar dasar", "Roulette, baccarat, blackjack—pilih satu dulu."],
         ["Jaga tempo", "Speed table enak, tapi keputusan jadi lebih buru-buru."],
       ],
-      glossH2: "Istilah meja yang bikin kamu kelihatan siap",
+      glossH2: "Istilah meja yang membuat kamu terlihat siap",
       glossP: "Dari betting spot sampai roadmap—dibahas apa adanya.",
       guideH2: "Tutorial live yang paling sering dibutuhkan",
       guideP: "Cara main dasar tanpa pura-pura jadi high roller.",
@@ -396,7 +396,7 @@ export const themes = {
     homeSections: {
       introH2: "Crash games: kurva naik, keputusan harus dingin",
       introP:
-        "Ini bukan soal nebak detik crash. Ini soal target, cash-out, dan menolak FOMO saat grafik masih ‘kerasa naik’.",
+        "Ini bukan soal nebak detik crash. Ini soal target, cash-out, dan menolak FOMO saat grafik masih ‘terasa naik’.",
       stepsH2: "Protokol crash sebelum round pertama",
       steps: [
         ["Tentukan target", "Contoh 1.5x—tulis sebelum mulai."],
@@ -404,9 +404,9 @@ export const themes = {
         ["Batasi jumlah round", "Session pendek mengalahkan ego."],
       ],
       glossH2: "Istilah crash yang harus steril dari mitos",
-      glossP: "Crash point, latency, streak bias—dibahas biar gak ketipu pola palsu.",
+      glossP: "Crash point, latency, streak bias—dibahas agar tidak ketipu pola palsu.",
       guideH2: "Playbook cash-out & manajemen risk",
-      guideP: "Langkah praktis biar grafik tidak menyetir emosi.",
+      guideP: "Langkah praktis agar grafik tidak menyetir emosi.",
       faqH2: "FAQ crash games",
       faqs: [
         [
@@ -431,7 +431,7 @@ export const themes = {
       glosarium: ["Terms Crash", "Definisi kurva, cash-out, dan bias yang sering menipu."],
       panduan: ["Playbook Crash", "Cara main dengan target dan protokol risiko."],
       game: ["Strategi Target", "Low/mid/high target dibahas tanpa ilusi."],
-      tips: ["Anti-FOMO Crash", "Habit biar grafik tidak menang dari kepalamu."],
+      tips: ["Anti-FOMO Crash", "Habit agar grafik tidak menang dari kepalamu."],
     },
     voice: "crash",
   },
@@ -448,9 +448,9 @@ export const themes = {
     ctaPrimary: "Belajar Baca Odds",
     ctaSecondary: "Playbook Handicap",
     homeSections: {
-      introH2: "Sportsbook: melek odds dulu, baru ngisi slip",
+      introH2: "Sportsbook: melek odds dulu, baru mengisi slip",
       introP:
-        "Bukan tipster drama. Ini modul biar kamu paham odds decimal, handicap, over/under, dan risiko parlay sebelum duit keluar.",
+        "Bukan tipster drama. Ini modul agar kamu paham odds decimal, handicap, over/under, dan risiko parlay sebelum duit keluar.",
       stepsH2: "Urutan belajar sportsbook yang masuk akal",
       steps: [
         ["Baca odds decimal", "Tahu return dan implied probability."],
@@ -458,7 +458,7 @@ export const themes = {
         ["Unit betting kecil", "Jaga bankroll dengan stake konsisten."],
       ],
       glossH2: "Kamus odds & pasar",
-      glossP: "Dari push/void sampai juice—biar settlement gak bikin kaget.",
+      glossP: "Dari push/void sampai juice—agar settlement tidak membuat kaget.",
       guideH2: "Playbook pasar yang sering dipakai",
       guideP: "Handicap, parlay, live bet—dibahas dengan contoh logika.",
       faqH2: "FAQ sportsbook",
@@ -473,7 +473,7 @@ export const themes = {
         ],
         [
           "Perlu ikut tipster?",
-          "Tidak wajib. Kalau ikut, audit track record dan jangan all-in karena ‘yakin banget’.",
+          "Tidak wajib. Kalau ikut, audit track record dan jangan all-in karena ‘yakin sekali’.",
         ],
         [
           "Satu liga saja boleh?",
@@ -482,7 +482,7 @@ export const themes = {
       ],
     },
     indexLabels: {
-      glosarium: ["Kamus Odds", "Istilah sportsbook biar slip tidak gelap."],
+      glosarium: ["Kamus Odds", "Istilah sportsbook agar slip tidak gelap."],
       panduan: ["Playbook Sports", "Cara baca pasar dan kelola bankroll."],
       game: ["Pasar & Cabang", "Bola, basket, tenis, esports—pintu masuknya."],
       tips: ["Disiplin Slip", "Supaya chasing loss tidak merusak minggu ini."],
@@ -512,14 +512,14 @@ export const themes = {
         ["Rencana istirahat", "Tahu mau ngapain setelah stop."],
       ],
       glossH2: "Istilah kontrol diri yang perlu dibiasakan",
-      glossP: "Self-exclusion, cooling-off, chasing losses—biar gak cuma jargon.",
-      guideH2: "Panduan biar hiburan tidak berubah jadi beban",
+      glossP: "Self-exclusion, cooling-off, chasing losses—agar tidak hanya jargon.",
+      guideH2: "Panduan agar hiburan tidak berubah jadi beban",
       guideP: "Langkah konkret menjaga jarak sehat dengan game.",
       faqH2: "FAQ bermain bertanggung jawab",
       faqs: [
         [
           "Kalau masih ‘sanggup’, perlu batas?",
-          "Perlu. Batas paling berguna dipasang saat masih sanggup, bukan setelah regrete.",
+          "Perlu. Batas paling berguna dipasang saat masih sanggup, bukan setelah menyesal.",
         ],
         [
           "Self-exclusion berarti lemah?",

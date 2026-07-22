@@ -41,7 +41,7 @@ const FACTS = {
     meaning:
       "RTP (Return to Player) adalah persentase teoretis total taruhan yang “kembali” ke pemain dalam jangka panjang. RTP 96% tidak berarti kamu akan balik 96% setelah main sejam.",
     useful:
-      "Pakai RTP untuk membandingkan ekspektasi antar game, bukan meramal spin berikutnya. Angkanya baru kerasa setelah volume putaran sangat besar.",
+      "Pakai RTP untuk membandingkan ekspektasi antar game, bukan meramal spin berikutnya. Angkanya baru terasa setelah volume putaran sangat besar.",
     example:
       "Dua game sama-sama RTP 96%, tapi yang satu low volatility dan yang lain high volatility bisa terasa jauh berbeda di session 30 menit.",
     mistakes: [
@@ -57,7 +57,7 @@ const FACTS = {
     useful:
       "Cocokkan volatilitas dengan bankroll dan mood. High volatility butuh napas panjang; low volatility lebih nyaman buat belajar mekanik.",
     example:
-      "Kalau kamu cuma siap 40 spin, high volatility sering terasa “mati gaya” duluan sebelum fitur sempat kebuka.",
+      "Kalau kamu hanya siap 40 spin, high volatility sering terasa “mati gaya” duluan sebelum fitur sempat terbuka.",
     mistakes: [
       "Main high volatility pakai budget ketat lalu tilt",
       "Ganti game tiap kalah tanpa paham ritmenya",
@@ -71,7 +71,7 @@ const FACTS = {
     useful:
       "Sebelum spin, cek berapa line yang aktif dan apakah taruhan per line sudah sesuai budget. Salah baca line = salah baca kenapa “hampir menang”.",
     example:
-      "Simbol yang kelihatan nyambung secara visual belum tentu ada di payline aktif.",
+      "Simbol yang terlihat nyambung secara visual belum tentu ada di payline aktif.",
     mistakes: [
       "Mengira semua gulungan dibayar meski line tidak aktif",
       "Naikkan jumlah line tanpa hitung total bet",
@@ -97,7 +97,7 @@ const FACTS = {
     meaning:
       "Scatter biasanya simbol pemicu fitur (sering free spin). Di banyak title, scatter bisa bayar tanpa harus duduk di payline tertentu.",
     useful:
-      "Yang penting bukan “scatter lewat terus”, tapi syarat jumlah dan apa yang dijamin saat fitur kebuka.",
+      "Yang penting bukan “scatter lewat terus”, tapi syarat jumlah dan apa yang dijamin saat fitur terbuka.",
     example:
       "Ada game yang butuh 3 scatter di reel mana pun; ada yang membatasi posisi. Jangan samakan.",
     mistakes: [
@@ -105,7 +105,7 @@ const FACTS = {
       "Naikkan bet hanya karena sering lihat 2 scatter",
       "Tidak cek apakah scatter bisa diganti wild",
     ],
-    tip: "Di mode demo, sengaja perhatikan apa yang terjadi saat 2 vs 3 scatter muncul. Itu bikin ekspektasi lebih realistis.",
+    tip: "Di mode demo, sengaja perhatikan apa yang terjadi saat 2 vs 3 scatter muncul. Itu membuat ekspektasi lebih realistis.",
   },
   wild: {
     meaning:
@@ -139,7 +139,7 @@ const FACTS = {
     meaning:
       "Multiplier mengalikan nilai kemenangan (x2, x10, dst.). Sumbernya bisa simbol, fitur, atau akumulasi selama tumble/cascade.",
     useful:
-      "Multiplier kelihatan sexy di highlight, tapi frekuensi munculnya yang lebih penting buat ekspektasi session pendek.",
+      "Multiplier terlihat sexy di highlight, tapi frekuensi munculnya yang lebih penting buat ekspektasi session pendek.",
     example:
       "x100 yang jarang muncul tidak otomatis lebih “baik” dari x5 yang lebih sering, tergantung gaya main dan bankroll.",
     mistakes: [
@@ -161,7 +161,7 @@ const FACTS = {
       "Beli fitur saat sedang tilt",
       "Tidak membandingkan harga buy dengan frekuensi trigger alami",
     ],
-    tip: "Uji dulu di demo: catat hasil 10x buy. Kalau fluktuasinya bikin kamu gak nyaman, jangan bawa ke uang asli dulu.",
+    tip: "Uji dulu di demo: catat hasil 10x buy. Kalau fluktuasinya membuat kamu tidak nyaman, jangan bawa ke uang asli dulu.",
   },
   megaways: {
     meaning:
@@ -189,7 +189,7 @@ const FACTS = {
       "Lupa bahwa parlay mengalikan risiko",
       "Mencampur format odds tanpa konversi",
     ],
-    tip: "Sebelum pasang, tulis: stake, odds, potensi return, dan alasan singkat. Kalau alasanmu cuma “kerasa”, tunda dulu.",
+    tip: "Sebelum pasang, tulis: stake, odds, potensi return, dan alasan singkat. Kalau alasanmu hanya “terasa”, tunda dulu.",
   },
   "handicap-asian": {
     meaning:
@@ -209,7 +209,7 @@ const FACTS = {
     meaning:
       "Over/Under adalah pasar total (biasanya gol/poin). Over 2.5 gol menang jika total gol ≥ 3; Under 2.5 menang jika total ≤ 2.",
     useful:
-      "Fokus ke tempo pertandingan, cedera, motivasi, dan tren scoring—bukan cuma klasemen.",
+      "Fokus ke tempo pertandingan, cedera, motivasi, dan tren scoring—bukan hanya klasemen.",
     example:
       "Laga yang terbuka secara gaya main belum tentu Over kalau kedua tim sedang kering gol.",
     mistakes: [
@@ -225,9 +225,9 @@ const FACTS = {
     useful:
       "Potensi return naik, probabilitas gabungan turun. Cocok sebagai hiburan kecil, rawan kalau dipakai buat “balik modal”.",
     example:
-      "Tiga pilihan masing-masing odds 1.60 ≈ gabungan 4.096—kelihatan menarik, tapi satu saja salah membuat slip gugur.",
+      "Tiga pilihan masing-masing odds 1.60 ≈ gabungan 4.096—terlihat menarik, tapi satu saja salah membuat slip gugur.",
     mistakes: [
-      "Menumpuk 8–10 pilihan karena “biar gede”",
+      "Menumpuk 8–10 pilihan karena “agar gede”",
       "Campur pasar yang tidak dipahami",
       "Naikkan jumlah parlay setelah kalah",
     ],
@@ -287,7 +287,7 @@ const FACTS = {
       "Mencari jalan pintas sebelum periode selesai",
       "Tidak mengganti kebiasaan dengan aktivitas lain",
     ],
-    tip: "Pasangkan self-exclusion dengan rencana konkret: tidur, olahraga singkat, atau ngobrol ke orang yang dipercaya.",
+    tip: "Pasangkan self-exclusion dengan rencana konkret: tidur, olahraga singkat, atau berbicara ke orang yang dipercaya.",
   },
   tilt: {
     meaning:
@@ -348,22 +348,22 @@ function inferFact(slug, label, topic) {
 
   return {
     meaning: `${label} adalah bagian penting saat memahami ${topic}. Intinya: bantu kamu membaca risiko, tempo, dan aturan sebelum ambil keputusan.`,
-    useful: `Dengan paham ${label}, kamu lebih gampang filter informasi mana yang berguna dan mana yang cuma bikin FOMO. Itu bedanya belajar mekanik vs ikut keramaian.`,
+    useful: `Dengan paham ${label}, kamu lebih gampang filter informasi mana yang berguna dan mana yang hanya membuat FOMO. Itu bedanya belajar mekanik vs ikut keramaian.`,
     example: `Contoh praktis: sebelum naikkan taruhan, cek dulu bagaimana ${label} memengaruhi ukuran risiko session kamu hari ini.`,
     mistakes: [
       `Menghafal istilah ${label} tanpa menyesuaikan budget`,
       "Mengambil keputusan besar saat sedang emosi",
       "Menelan klaim orang lain tanpa cek aturan/info resmi",
     ],
-    tip: `Coba jelaskan ${label} ke diri sendiri dalam satu kalimat. Kalau masih muter-muter, buka lagi aturan terkait lalu tulis ulang dengan bahasa sendiri.`,
+    tip: `Coba jelaskan ${label} ke diri sendiri dalam satu kalimat. Kalau masih berputar-putar, buka lagi aturan terkait lalu tulis ulang dengan bahasa sendiri.`,
   };
 }
 
 const VOICE_OPENERS = {
   slot: {
     glossary: [
-      (l) => `<p>Di dunia slot, <strong>${l}</strong> sering disebut sambil lalu. Padahal salah paham di sini biasanya berujung ekspektasi kacau pas sudah spin.</p>`,
-      (l) => `<p>Kalau paytable terasa kayak kode rahasia, mulai dari <strong>${l}</strong>. Ini salah satu batu bata biar kamu gak main buta.</p>`,
+      (l) => `<p>Di dunia slot, <strong>${l}</strong> sering disebut sambil lalu. Padahal salah paham di sini biasanya berujung ekspektasi kacau saat sudah spin.</p>`,
+      (l) => `<p>Kalau paytable terasa seperti kode rahasia, mulai dari <strong>${l}</strong>. Ini salah satu batu bata agar kamu tidak main buta.</p>`,
     ],
     guide: [
       (l) => `<p>Panduan <strong>${l}</strong> ini buat kamu yang mau rapiin cara main slot—bukan nyari shortcut “pasti menang”.</p>`,
@@ -377,21 +377,21 @@ const VOICE_OPENERS = {
   },
   pg: {
     glossary: [
-      (l) => `<p>Di PG Soft, <strong>${l}</strong> biasanya nyangkut ke cascading dan tempo portrait. Mari rapikan artinya biar UI-nya gak terasa alien.</p>`,
+      (l) => `<p>Di PG Soft, <strong>${l}</strong> biasanya terkait ke cascading dan tempo portrait. Mari rapikan artinya agar UI-nya tidak terasa alien.</p>`,
     ],
     guide: [
-      (l) => `<p>Guide <strong>${l}</strong> fokus ke cara baca mekanik PG Soft yang sering bikin orang overclaim di chat.</p>`,
+      (l) => `<p>Guide <strong>${l}</strong> fokus ke cara baca mekanik PG Soft yang sering membuat orang overclaim di chat.</p>`,
     ],
     game: [
-      (l) => `<p><strong>${l}</strong> termasuk judul yang sering dibuka di HP. Bedah singkat biar kamu tahu lagi ngadepin apa.</p>`,
+      (l) => `<p><strong>${l}</strong> termasuk judul yang sering dibuka di HP. Bedah singkat agar kamu tahu lagi menghadapi apa.</p>`,
     ],
     tip: [
-      (l) => `<p>Habit <strong>${l}</strong> bikin session PG Soft tetap nyaman—terutama kalau kamu main portrait lama-lama.</p>`,
+      (l) => `<p>Habit <strong>${l}</strong> membuat session PG Soft tetap nyaman—terutama kalau kamu main portrait lama-lama.</p>`,
     ],
   },
   pp: {
     glossary: [
-      (l) => `<p>Di Pragmatic Play, <strong>${l}</strong> sering jadi bahan highlight. Kita bedah artinya biar gak cuma kagum sama multiplier orang lain.</p>`,
+      (l) => `<p>Di Pragmatic Play, <strong>${l}</strong> sering jadi bahan highlight. Kita bedah artinya agar tidak hanya kagum sama multiplier orang lain.</p>`,
     ],
     guide: [
       (l) => `<p><strong>${l}</strong> dibahas dengan pendekatan realistis: tumble, ante, dan risiko high volatility.</p>`,
@@ -400,12 +400,12 @@ const VOICE_OPENERS = {
       (l) => `<p><strong>${l}</strong> ramai dicari. Sebelum gas, pahami dulu karakter fiturnya.</p>`,
     ],
     tip: [
-      (l) => `<p>Disiplin <strong>${l}</strong> penting banget di title PP yang ayunannya tajam.</p>`,
+      (l) => `<p>Disiplin <strong>${l}</strong> penting sekali di title PP yang ayunannya tajam.</p>`,
     ],
   },
   habanero: {
     glossary: [
-      (l) => `<p>Habanero punya vibe arcade sendiri. Istilah <strong>${l}</strong> perlu dibaca biar fitur klasik gak bikin kaget.</p>`,
+      (l) => `<p>Habanero punya vibe arcade sendiri. Istilah <strong>${l}</strong> perlu dibaca agar fitur klasik tidak membuat kaget.</p>`,
     ],
     guide: [
       (l) => `<p>Tutorial <strong>${l}</strong> mengajak kamu mengenali karakter Hab tanpa buru-buru kejar fitur.</p>`,
@@ -414,7 +414,7 @@ const VOICE_OPENERS = {
       (l) => `<p><strong>${l}</strong> sering jadi pintu masuk ke katalog Habanero. Ini yang perlu dicek dulu.</p>`,
     ],
     tip: [
-      (l) => `<p>Tips <strong>${l}</strong> biar godaan fitur Hab (termasuk gamble) tidak menang dari rencanamu.</p>`,
+      (l) => `<p>Tips <strong>${l}</strong> agar godaan fitur Hab (termasuk gamble) tidak menang dari rencanamu.</p>`,
     ],
   },
   microgaming: {
@@ -433,7 +433,7 @@ const VOICE_OPENERS = {
   },
   nolimit: {
     glossary: [
-      (l) => `<p>Nolimit City suka nama fitur yang kedengeran gila. <strong>${l}</strong> kita translate biar risikonya kebaca.</p>`,
+      (l) => `<p>Nolimit City suka nama fitur yang terdengar gila. <strong>${l}</strong> kita translate agar risikonya terbaca.</p>`,
     ],
     guide: [
       (l) => `<p>Decode <strong>${l}</strong> dengan protokol aman: demo, bankroll mikro, session pendek.</p>`,
@@ -447,7 +447,7 @@ const VOICE_OPENERS = {
   },
   live: {
     glossary: [
-      (l) => `<p>Di meja live, <strong>${l}</strong> muncul bareng tempo dealer dan table limit. Pahami biar gak panik saat betting time hampir tutup.</p>`,
+      (l) => `<p>Di meja live, <strong>${l}</strong> muncul bareng tempo dealer dan table limit. Pahami agar tidak panik saat betting time hampir tutup.</p>`,
     ],
     guide: [
       (l) => `<p>Tutorial <strong>${l}</strong> untuk yang baru duduk di meja—fokus aturan dasar, bukan gaya high roller.</p>`,
@@ -475,7 +475,7 @@ const VOICE_OPENERS = {
   },
   sports: {
     glossary: [
-      (l) => `<p>Sebelum ngisi slip, <strong>${l}</strong> harus kebaca. Ini fondasi biar odds tidak cuma angka cantik.</p>`,
+      (l) => `<p>Sebelum mengisi slip, <strong>${l}</strong> harus terbaca. Ini fondasi agar odds tidak hanya angka cantik.</p>`,
     ],
     guide: [
       (l) => `<p>Playbook <strong>${l}</strong> untuk sportsbook: logika pasar dulu, keyakinan belakangan.</p>`,
@@ -484,7 +484,7 @@ const VOICE_OPENERS = {
       (l) => `<p><strong>${l}</strong> adalah pintu cabang/pasar. Pahami settlement-nya sebelum stake naik.</p>`,
     ],
     tip: [
-      (l) => `<p>Disiplin slip lewat <strong>${l}</strong>—biar chasing loss tidak merusak minggu ini.</p>`,
+      (l) => `<p>Disiplin slip lewat <strong>${l}</strong>—agar chasing loss tidak merusak minggu ini.</p>`,
     ],
   },
   play: {
@@ -518,16 +518,16 @@ function naturalMeta(item, site) {
     tip: `${label}: Tips Session ${topic} Lebih Terkendali`,
   };
   const h1s = {
-    glossary: `${label}: arti, fungsi, dan cara bacanya biar gak salah kaprah`,
+    glossary: `${label}: arti, fungsi, dan cara bacanya agar tidak salah kaprah`,
     guide: `${label}: langkah praktis yang bisa langsung dicoba`,
     game: `${label}: mekanik, ritme, dan approach yang lebih sadar`,
-    tip: `${label} — kebiasaan kecil yang efeknya kerasa`,
+    tip: `${label} — kebiasaan kecil yang efeknya terasa`,
   };
   const deks = {
     glossary: `Penjelasan ${label} untuk pemahaman ${topic} yang realistis: arti, contoh pemakaian, dan salah kaprah yang sering kejadian.`,
     guide: `Panduan ${label} dengan langkah konkret, risiko yang perlu diwaspadai, plus checklist singkat sebelum diterapkan.`,
     game: `Ringkasan ${label}: karakter permainan, hal wajib dicek, dan kapan sebaiknya skip.`,
-    tip: `Cara menerapkan ${label} supaya hiburan ${topic} tetap terkendali dan tidak bikin keputusan impulsif.`,
+    tip: `Cara menerapkan ${label} supaya hiburan ${topic} tetap terkendali dan tidak membuat keputusan impulsif.`,
   };
   return {
     title: `${titles[kind]} | ${site.name}`,
@@ -540,13 +540,13 @@ function naturalMeta(item, site) {
 
 function uniqueExtras(slug, label, topic, kind) {
   const scenarios = [
-    `Bayangin kamu baru masuk session ${topic} dengan budget terbatas: paham <strong>${esc(label)}</strong> membantu kamu menolak keputusan “sekali lagi” yang gak ada dasarnya.`,
-    `Kalau temanmu cuma kirim screenshot tanpa konteks, kamu yang sudah paham <strong>${esc(label)}</strong> bisa filter mana yang info dan mana yang bait FOMO.`,
+    `Bayangkan kamu baru masuk session ${topic} dengan budget terbatas: paham <strong>${esc(label)}</strong> membantu kamu menolak keputusan “sekali lagi” yang tidak ada dasarnya.`,
+    `Kalau temanmu hanya kirim screenshot tanpa konteks, kamu yang sudah paham <strong>${esc(label)}</strong> bisa filter mana yang info dan mana yang bait FOMO.`,
     `Di HP, keputusan cenderung lebih cepat. Itu kenapa konsep <strong>${esc(label)}</strong> perlu “nempel” sebelum jari otomatis klik.`,
   ];
   const closers = [
     `Intinya sederhana: makin jelas konsepnya, makin kecil peluang kamu membiarkan emosi yang nyetir.`,
-    `Kalau setelah baca ini kamu bisa jelasin ulang dengan bahasa sendiri, berarti fondasinya sudah mulai berdiri.`,
+    `Kalau setelah baca ini kamu bisa jelaskan ulang dengan bahasa sendiri, berarti fondasinya sudah mulai berdiri.`,
     `Simpan page ini sebagai catatan singkat, lalu balik lagi setelah satu session untuk bandingkan teori vs pengalamanmu.`,
   ];
   return {
@@ -593,7 +593,7 @@ export function buildProse(item, site) {
     blocks.push(`<h2>${extra.headingHow}</h2>`);
     blocks.push(`<ol>
       <li>Buka info/aturan/paytable, cari bagian yang relevan dengan ${R}.</li>
-      <li>Samakan pemahamanmu dengan teks resmi—jangan cuma dari chat.</li>
+      <li>Samakan pemahamanmu dengan teks resmi—jangan hanya dari chat.</li>
       <li>Hubungkan ke batas session: waktu, uang, dan ukuran taruhan.</li>
       <li>Putuskan lanjut, ganti game/pasar, atau istirahat.</li>
     </ol>`);
@@ -611,7 +611,7 @@ export function buildProse(item, site) {
     blocks.push(`<ol>
       <li>Tentukan tujuan session: belajar, hiburan singkat, atau eksplor fitur—pilih satu.</li>
       <li>Cek informasi terkait <strong>${K}</strong> di game/pasar yang kamu mainkan.</li>
-      <li>Mulai dengan taruhan kecil sampai ritmenya kerasa.</li>
+      <li>Mulai dengan taruhan kecil sampai ritmenya terasa.</li>
       <li>Terapkan pemahaman soal ${R} sesuai rencana; jangan improvisasi karena FOMO.</li>
       <li>Stop sesuai batas. Menang atau kalah, aturannya sama.</li>
     </ol>`);
@@ -636,7 +636,7 @@ export function buildProse(item, site) {
     if (fact.example) blocks.push(`<p>${esc(fact.example)}</p>`);
     blocks.push(`<h2>Kapan lebih baik skip</h2>`);
     blocks.push(
-      `<p>Skip ${L} kalau batas belum diset, emosi lagi naik, atau kamu cuma ikut hiruk-pikuk konten orang lain. Filter terbaik untuk pencarian “${K}”: apakah ini hiburan yang kamu kontrol?</p>`
+      `<p>Skip ${L} kalau batas belum diset, emosi lagi naik, atau kamu hanya ikut hiruk-pikuk konten orang lain. Filter terbaik untuk pencarian “${K}”: apakah ini hiburan yang kamu kontrol?</p>`
     );
     blocks.push(`<div class="tip-box"><strong>Reminder</strong><p>${esc(fact.tip)}</p></div>`);
   } else {
@@ -664,7 +664,7 @@ export function buildProse(item, site) {
       [`Main portrait lama aman?`, `Nyaman secara UI, tapi tetap pasang timer. Postur dan durasi juga bagian dari kontrol.`],
     ],
     pp: [
-      [`${ref} bikin saya bisa kejar max win?`, `Max win adalah langit-langit teoretis. Jangan jadikan target harian.`],
+      [`${ref} membuat saya bisa kejar max win?`, `Max win adalah langit-langit teoretis. Jangan jadikan target harian.`],
       [`Ante/buy perlu dipaksakan?`, `Tidak. Pelajari dulu base game dan biaya ekstra terhadap bankroll.`],
     ],
     habanero: [
@@ -677,7 +677,7 @@ export function buildProse(item, site) {
     ],
     nolimit: [
       [`Kalau sudah paham ${ref}, boleh all-in?`, `Justru semakin paham, semakin ketat bankroll. Extreme volatility tidak cocok untuk ego.`],
-      [`Demo cukup berapa lama?`, `Cukup sampai kamu bisa jelasin fitur utama tanpa buka chat orang lain.`],
+      [`Demo cukup berapa lama?`, `Cukup sampai kamu bisa jelaskan fitur utama tanpa buka chat orang lain.`],
     ],
     live: [
       [`${ref} berlaku di semua meja?`, `Prinsipnya mirip, detail limit & variasi aturan bisa beda. Baca info meja.`],

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://superdewa-crash.com/sitemap.xml

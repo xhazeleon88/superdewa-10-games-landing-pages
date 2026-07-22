@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://superdewa-nolimit.com/sitemap.xml

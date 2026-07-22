@@ -6,7 +6,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { sites, GROUP_URLS } from "./sites-data.mjs";
+import { sites, GROUP_URLS, OFFICIAL_LINK, HOME_ACTION_CTAS } from "./sites-data.mjs";
 import { enrichItem, buildProse } from "./content-engine.mjs";
 import { getTheme } from "./site-themes.mjs";
 import { faviconSvg } from "./favicons.mjs";
@@ -90,6 +90,7 @@ function layout({ site, theme, depth, title, description, canonical, body, schem
     const current = url.includes(site.domain);
     return `<li><a href="${url}"${current ? ' aria-current="page"' : ""}>${url}</a></li>`;
   }).join("\n");
+  const official = `<li><a href="${OFFICIAL_LINK.href}">${esc(OFFICIAL_LINK.label)}</a></li>`;
 
   const navItems = theme.nav
     .map((label, i) => {
@@ -140,6 +141,7 @@ function layout({ site, theme, depth, title, description, canonical, body, schem
         <h2 id="sd-group-title">Superdewa Group</h2>
         <ul>
           ${group}
+          ${official}
         </ul>
       </nav>
       <p class="disclaimer">${esc(site.name)} — konten edukasi. Main bijak, batasi waktu & budget. 18+. Bukan jaminan kemenangan.</p>
@@ -195,8 +197,14 @@ function buildHome(site, theme) {
         <img class="hero-brand" src="assets/img/logo-superdewa.png" width="420" height="134" alt="Superdewa">
         <h1>${esc(site.pillarH1)}</h1>
         <p class="hero-lead">${esc(site.pillarDek)}</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="glosarium/index.html">${esc(theme.ctaPrimary)}</a>
+        <div class="cta-row cta-actions">
+          ${HOME_ACTION_CTAS.map(
+            (c, i) =>
+              `<a class="btn ${i === 0 ? "btn-primary" : "btn-secondary"}" href="${c.href}" rel="noopener noreferrer" target="_blank">${esc(c.label)}</a>`
+          ).join("\n          ")}
+        </div>
+        <div class="cta-row cta-learn">
+          <a class="btn btn-secondary" href="glosarium/index.html">${esc(theme.ctaPrimary)}</a>
           <a class="btn btn-secondary" href="panduan/index.html">${esc(theme.ctaSecondary)}</a>
         </div>
       </div>
@@ -312,7 +320,7 @@ function buildArticle(site, theme, raw, kind, folder) {
   const canonical = `https://${site.domain}/${folder}/${item.slug}.html`;
   const folderLabel = theme.indexLabels[folder][0];
   const relatedH2 = {
-    slot: "Lanjut baca biar makin melek slot",
+    slot: "Lanjut baca agar makin melek slot",
     pg: "Materi PG Soft terkait",
     pp: "Lanjutan buat yang lagi dalemin PP",
     habanero: "Konten Habanero yang nyambung",
@@ -532,6 +540,14 @@ ${urls
 
 function main() {
   ensureDir(SITES_DIR);
+  const keep = new Set(sites.map((s) => s.domain));
+  for (const entry of fs.readdirSync(SITES_DIR, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    if (!keep.has(entry.name)) {
+      fs.rmSync(path.join(SITES_DIR, entry.name), { recursive: true, force: true });
+      console.log(`– removed old site folder: ${entry.name}`);
+    }
+  }
   const summary = [];
   for (const site of sites) {
     const result = buildSite(site);

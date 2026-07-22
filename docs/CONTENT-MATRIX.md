@@ -29,7 +29,7 @@ Target: **≥ 55 HTML pages / situs** (index + cluster).
 
 ---
 
-## 1) superdewa-slot.com — Slot Glossary & How to Play
+## 1) tearingspaces.com — Slot Glossary & How to Play
 
 **Pillar H1 arah:** “Slot 101: istilah + cara main biar gak bingung”
 
@@ -47,7 +47,7 @@ session-timer, stop-loss-sederhana, catat-hasil-main, main-pas-fresh, jangan-kej
 
 ---
 
-## 2) superdewa-pg.com — PG Soft
+## 2) thebotsquadpuzzlebattles.com — PG Soft
 
 **Pillar:** “PG Soft guide: mekanik cascading biar makin paham”
 
@@ -65,7 +65,7 @@ main-portrait-nyaman, pantau-multiplier, jangan-spam-feature-buy, cooldown-antar
 
 ---
 
-## 3) superdewa-pp.com — Pragmatic Play
+## 3) nightlightsgame.com — Pragmatic Play
 
 **Pillar:** “Pragmatic Play 101: tumble, multiplier & free spin”
 
@@ -83,7 +83,7 @@ mulai-bet-kecil, kenali-vol-dulu, jangan-kejar-multiplier, set-limit-harian, ist
 
 ---
 
-## 4) superdewa-habanero.com — Habanero
+## 4) butterfingerxbox.com — Habanero
 
 **Pillar:** “Habanero guide: klasik, feature-rich, vibe arcade”
 
@@ -101,7 +101,7 @@ uji-demo-dulu, hati-hati-gamble, pilih-tema-santai, limit-session, catat-fitur-f
 
 ---
 
-## 5) superdewa-microgaming.com — Microgaming
+## 5) mmomounts.com — Microgaming
 
 **Pillar:** “Microgaming guide: jackpot network & klasik legend”
 
@@ -119,7 +119,7 @@ jackpot-bukan-atm, set-budget-khusus, main-hiburan, jangan-all-in, cooldown-panj
 
 ---
 
-## 6) superdewa-nolimit.com — Nolimit City
+## 6) chiliconcarnagegame.com — Nolimit City
 
 **Pillar:** “Nolimit City decoded: xNudge, xWays, xBet biar ga bingung”
 
@@ -137,7 +137,7 @@ hanya-bet-yang-rela-hilang, demo-panjang, stop-loss-ketat, jangan-bonus-buy-awal
 
 ---
 
-## 7) superdewa-live.com — Live Casino Tutorial
+## 7) crossfirethegame.com — Live Casino Tutorial
 
 **Pillar:** “Live casino tutorial: roulette, baccarat, blackjack biar ga awkward”
 
@@ -155,7 +155,7 @@ mulai-meja-low-limit, jangan-kejar-warna, fokus-satu-game, matikan-auto-chat-dis
 
 ---
 
-## 8) superdewa-crash.com — Crash Games
+## 8) rotpod.net — Crash Games
 
 **Pillar:** “Crash games guide: baca kurva, cash out, mindset risk”
 
@@ -173,7 +173,7 @@ target-kecil-konsisten, jangan-fomo, cash-out-lebih-awal, limit-harian, jangan-m
 
 ---
 
-## 9) superdewa-sports.com — Sportsbook
+## 9) justcause2.com — Sportsbook
 
 **Pillar:** “Sportsbook guide: odds, handicap, parlay biar melek taruhan”
 
@@ -191,7 +191,7 @@ satu-pasar-dulu, unit-betting-kecil, jangan-parlay-kebanyakan, catat-tip, istira
 
 ---
 
-## 10) superdewa-play.com — Responsible Gambling
+## 10) vexelgames.com — Responsible Gambling
 
 **Pillar:** “Main tetap seru, asal tetap waras — panduan bertanggung jawab”
 

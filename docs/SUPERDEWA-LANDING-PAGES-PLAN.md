@@ -82,16 +82,16 @@ Tidak ada parallax berat, glow berlapis, atau animasi yang ganggu CLS.
 
 | # | Domain | Tema | Accent tint | Pillar keyword (contoh) |
 | --- | --- | --- | --- | --- |
-| 1 | `superdewa-slot.com` | Slot glossary & how to play | Bolt yellow + blue | `cara main slot`, `istilah slot` |
-| 2 | `superdewa-pg.com` | PG Soft games guide | Cyan soft | `panduan PG Soft`, `game PG Soft` |
-| 3 | `superdewa-pp.com` | Pragmatic Play guide | Red brand | `panduan Pragmatic Play` |
-| 4 | `superdewa-habanero.com` | Habanero guide | Orange-amber | `panduan Habanero` |
-| 5 | `superdewa-microgaming.com` | Microgaming guide | Teal | `panduan Microgaming` |
-| 6 | `superdewa-nolimit.com` | Nolimit City guide | Hot pink-red | `panduan Nolimit City` |
-| 7 | `superdewa-live.com` | Live casino tutorial | Deep red | `cara main live casino` |
-| 8 | `superdewa-crash.com` | Crash games guide | Neon lime-yellow | `cara main crash game` |
-| 9 | `superdewa-sports.com` | Sportsbook guide | Field green-blue | `panduan sportsbook` |
-| 10 | `superdewa-play.com` | Responsible gambling | Calm blue-white | `bermain bertanggung jawab` |
+| 1 | `tearingspaces.com` | Slot glossary & how to play | Bolt yellow + blue | `cara main slot`, `istilah slot` |
+| 2 | `thebotsquadpuzzlebattles.com` | PG Soft games guide | Cyan soft | `panduan PG Soft`, `game PG Soft` |
+| 3 | `nightlightsgame.com` | Pragmatic Play guide | Red brand | `panduan Pragmatic Play` |
+| 4 | `butterfingerxbox.com` | Habanero guide | Orange-amber | `panduan Habanero` |
+| 5 | `mmomounts.com` | Microgaming guide | Teal | `panduan Microgaming` |
+| 6 | `chiliconcarnagegame.com` | Nolimit City guide | Hot pink-red | `panduan Nolimit City` |
+| 7 | `crossfirethegame.com` | Live casino tutorial | Deep red | `cara main live casino` |
+| 8 | `rotpod.net` | Crash games guide | Neon lime-yellow | `cara main crash game` |
+| 9 | `justcause2.com` | Sportsbook guide | Field green-blue | `panduan sportsbook` |
+| 10 | `vexelgames.com` | Responsible gambling | Calm blue-white | `bermain bertanggung jawab` |
 
 Setiap situs = **satu topik utama** (silo), bukan dashboard campuran.
 
@@ -135,7 +135,7 @@ Semua 10 situs mengikuti **template struktur yang sama**, isi & keyword beda per
 
 ### 4.3 Matriks konten singkat per situs
 
-**1 — Slot Glossary (`superdewa-slot.com`)**  
+**1 — Slot Glossary (`tearingspaces.com`)**  
 Istilah: RTP, volatilitas, payline, scatter, wild, free spin, buy feature, megaways, progressive, dll.  
 How-to: cara baca tabel bayaran, cara atur bet, demo vs real, pola mental Gen Z “main santai”.
 
@@ -270,16 +270,16 @@ Wajib di **setiap halaman** semua situs:
   <nav class="group-nav" aria-labelledby="sd-group-title">
     <h2 id="sd-group-title">Superdewa Group</h2>
     <ul>
-      <li><a href="https://superdewa-slot.com/">https://superdewa-slot.com/</a></li>
-      <li><a href="https://superdewa-pg.com/">https://superdewa-pg.com/</a></li>
-      <li><a href="https://superdewa-pp.com/">https://superdewa-pp.com/</a></li>
-      <li><a href="https://superdewa-habanero.com/">https://superdewa-habanero.com/</a></li>
-      <li><a href="https://superdewa-microgaming.com/">https://superdewa-microgaming.com/</a></li>
-      <li><a href="https://superdewa-nolimit.com/">https://superdewa-nolimit.com/</a></li>
-      <li><a href="https://superdewa-live.com/">https://superdewa-live.com/</a></li>
-      <li><a href="https://superdewa-crash.com/">https://superdewa-crash.com/</a></li>
-      <li><a href="https://superdewa-sports.com/">https://superdewa-sports.com/</a></li>
-      <li><a href="https://superdewa-play.com/">https://superdewa-play.com/</a></li>
+      <li><a href="https://tearingspaces.com/">https://tearingspaces.com/</a></li>
+      <li><a href="https://thebotsquadpuzzlebattles.com/">https://thebotsquadpuzzlebattles.com/</a></li>
+      <li><a href="https://nightlightsgame.com/">https://nightlightsgame.com/</a></li>
+      <li><a href="https://butterfingerxbox.com/">https://butterfingerxbox.com/</a></li>
+      <li><a href="https://mmomounts.com/">https://mmomounts.com/</a></li>
+      <li><a href="https://chiliconcarnagegame.com/">https://chiliconcarnagegame.com/</a></li>
+      <li><a href="https://crossfirethegame.com/">https://crossfirethegame.com/</a></li>
+      <li><a href="https://rotpod.net/">https://rotpod.net/</a></li>
+      <li><a href="https://justcause2.com/">https://justcause2.com/</a></li>
+      <li><a href="https://vexelgames.com/">https://vexelgames.com/</a></li>
     </ul>
   </nav>
   <p class="disclaimer">Konten edukasi. Main bijak, batasi waktu & budget. 18+.</p>
@@ -316,8 +316,8 @@ Wajib di **setiap halaman** semua situs:
     /svg/icons/*.svg
     /partials/footer-group.html       ← referensi (di-build ke tiap page)
   /sites
-    /superdewa-slot.com/ ...
-    /superdewa-pg.com/ ...
+    /tearingspaces.com/ ...
+    /thebotsquadpuzzlebattles.com/ ...
     ... (10 folders)
   /scripts
     build-pages.mjs                   ← generator HTML dari template + markdown/JSON
@@ -420,6 +420,6 @@ Karena volume ≥ 500 file, **generator script** wajib agar konsisten SEO tags, 
 
 ## 15. Next step setelah approve plan
 
-Mulai **Fase A**: recreate logo SVG, tokens, prototype homepage `superdewa-slot.com`, lalu `CONTENT-MATRIX.md` penuh untuk 10 situs sebelum batch generate.
+Mulai **Fase A**: recreate logo SVG, tokens, prototype homepage `tearingspaces.com`, lalu `CONTENT-MATRIX.md` penuh untuk 10 situs sebelum batch generate.
 
 Jika ada aset logo file asli (PNG/SVG), taruh di `/assets/brand/` agar recreate SVG 1:1 lebih akurat; sementara palette & siluet dari logo yang dibagikan sudah cukup untuk mulai.

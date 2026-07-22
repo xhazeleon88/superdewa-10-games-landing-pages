@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://superdewa-microgaming.com/sitemap.xml

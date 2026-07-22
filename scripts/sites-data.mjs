@@ -1,31 +1,44 @@
 /** Compact content packs for 10 Superdewa hubs */
 
 export const GROUP_URLS = [
-  "https://superdewa-slot.com/",
-  "https://superdewa-pg.com/",
-  "https://superdewa-pp.com/",
-  "https://superdewa-habanero.com/",
-  "https://superdewa-microgaming.com/",
-  "https://superdewa-nolimit.com/",
-  "https://superdewa-live.com/",
-  "https://superdewa-crash.com/",
-  "https://superdewa-sports.com/",
-  "https://superdewa-play.com/",
+  "https://tearingspaces.com/",
+  "https://thebotsquadpuzzlebattles.com/",
+  "https://nightlightsgame.com/",
+  "https://butterfingerxbox.com/",
+  "https://mmomounts.com/",
+  "https://chiliconcarnagegame.com/",
+  "https://crossfirethegame.com/",
+  "https://rotpod.net/",
+  "https://justcause2.com/",
+  "https://vexelgames.com/",
+];
+
+/** Official Superdewa entry link shown in every footer */
+export const OFFICIAL_LINK = {
+  href: "https://jalursuperdewa3.com/",
+  label: "Superdewa Resmi",
+};
+
+/** Homepage conversion CTAs (all landing pages) */
+export const HOME_ACTION_CTAS = [
+  { href: "https://1dewa.zone/link1", label: "Daftar Superdewa" },
+  { href: "https://1dewa.zone/link2", label: "Login Superdewa" },
+  { href: "https://1dewa.zone/link3", label: "Link Alternatif" },
 ];
 
 /** [slug, shortLabel, keyword] */
 export const sites = [
   {
     id: "slot",
-    domain: "superdewa-slot.com",
+    domain: "tearingspaces.com",
     accent: "site-accent-bolt",
     hero: "slot.svg",
     topic: "slot",
     name: "Slot Glosarium & How to Play",
     nav: "Slot Guide",
-    pillarTitle: "Slot 101 Superdewa — Glosarium & Cara Main Biar Gak Bingung",
-    pillarH1: "Slot 101: istilah wajib + cara main yang beneran masuk akal",
-    pillarDek: "Dari RTP sampe scatter, kita breakdown santai tapi jelas. Cocok buat yang baru start atau yang pengen refresh ilmu biar mainnya lebih chill.",
+    pillarTitle: "Slot 101 Superdewa — Glosarium & Cara Main Agar Tidak Bingung",
+    pillarH1: "Slot 101: istilah wajib + cara main yang benar-benar masuk akal",
+    pillarDek: "Dari RTP sampai scatter, kita breakdown santai tapi jelas. Cocok buat yang baru start atau yang ingin refresh ilmu agar mainnya lebih santai.",
     keyword: "cara main slot, istilah slot",
     about: "Hub edukasi slot Superdewa: glosarium, mekanik, dan tips main bijak tanpa klaim palsu.",
     glossaries: [
@@ -91,15 +104,15 @@ export const sites = [
   },
   {
     id: "pg",
-    domain: "superdewa-pg.com",
+    domain: "thebotsquadpuzzlebattles.com",
     accent: "site-accent-cyan",
     hero: "pg.svg",
     topic: "PG Soft",
     name: "PG Soft Games Guide",
     nav: "PG Soft",
     pillarTitle: "Panduan PG Soft Superdewa — Cascading & Multiplier Trail",
-    pillarH1: "PG Soft guide: cascading biar makin paham, bukan cuma spam spin",
-    pillarDek: "Mahjong Ways sampe Wild Bandito — kita bahas mekanik khas PG Soft dengan bahasa yang enak dicerna.",
+    pillarH1: "PG Soft guide: cascading agar makin paham, bukan hanya spam spin",
+    pillarDek: "Mahjong Ways sampai Wild Bandito — kita bahas mekanik khas PG Soft dengan bahasa yang enak dicerna.",
     keyword: "panduan PG Soft, game PG Soft",
     about: "Panduan edukasi game PG Soft dari Superdewa: fitur, ritme, dan tips session sehat.",
     glossaries: [
@@ -165,7 +178,7 @@ export const sites = [
   },
   {
     id: "pp",
-    domain: "superdewa-pp.com",
+    domain: "nightlightsgame.com",
     accent: "site-accent-red",
     hero: "pp.svg",
     topic: "Pragmatic Play",
@@ -173,7 +186,7 @@ export const sites = [
     nav: "Pragmatic",
     pillarTitle: "Panduan Pragmatic Play Superdewa — Tumble, Multiplier & Free Spin",
     pillarH1: "Pragmatic Play 101: tumble, multiplier, dan free spin tanpa drama",
-    pillarDek: "Gates, Sweet Bonanza, Starlight — kita kupas mekanik PP biar kamu main dengan kepala dingin.",
+    pillarDek: "Gates, Sweet Bonanza, Starlight — kita kupas mekanik PP agar kamu main dengan kepala dingin.",
     keyword: "panduan Pragmatic Play",
     about: "Panduan edukasi Pragmatic Play Superdewa fokus mekanik, risiko, dan ekspektasi realistis.",
     glossaries: [
@@ -239,7 +252,7 @@ export const sites = [
   },
   {
     id: "habanero",
-    domain: "superdewa-habanero.com",
+    domain: "butterfingerxbox.com",
     accent: "site-accent-amber",
     hero: "habanero.svg",
     topic: "Habanero",
@@ -247,7 +260,7 @@ export const sites = [
     nav: "Habanero",
     pillarTitle: "Panduan Habanero Superdewa — Klasik, Feature-Rich, Vibe Arcade",
     pillarH1: "Habanero guide: klasik, feature-rich, tetap enak buat dipelajari",
-    pillarDek: "Dari Koi Gate sampe Hot Hot Fruit — kupas fitur Habanero biar mainnya lebih sadar mekanik.",
+    pillarDek: "Dari Koi Gate sampai Hot Hot Fruit — kupas fitur Habanero agar mainnya lebih sadar mekanik.",
     keyword: "panduan Habanero",
     about: "Panduan edukasi slot Habanero Superdewa: fitur, ritme klasik, dan tips bijak.",
     glossaries: [
@@ -313,7 +326,7 @@ export const sites = [
   },
   {
     id: "microgaming",
-    domain: "superdewa-microgaming.com",
+    domain: "mmomounts.com",
     accent: "site-accent-teal",
     hero: "microgaming.svg",
     topic: "Microgaming",
@@ -321,7 +334,7 @@ export const sites = [
     nav: "Microgaming",
     pillarTitle: "Panduan Microgaming Superdewa — Jackpot Network & Klasik Legend",
     pillarH1: "Microgaming guide: jackpot network & klasik legend, ekspektasi tetap realistis",
-    pillarDek: "Mega Moolah sampe Immortal Romance — kita bahas mekanik dan mindset biar gak kejebak fantasi jackpot.",
+    pillarDek: "Mega Moolah sampai Immortal Romance — kita bahas mekanik dan mindset agar tidak terjebak fantasi jackpot.",
     keyword: "panduan Microgaming",
     about: "Panduan edukasi Microgaming Superdewa: jackpot, klasik, dan kontrol diri.",
     glossaries: [
@@ -387,15 +400,15 @@ export const sites = [
   },
   {
     id: "nolimit",
-    domain: "superdewa-nolimit.com",
+    domain: "chiliconcarnagegame.com",
     accent: "site-accent-pink",
     hero: "nolimit.svg",
     topic: "Nolimit City",
     name: "Nolimit City Games Guide",
     nav: "Nolimit",
     pillarTitle: "Panduan Nolimit City Superdewa — xNudge, xWays, xBet Decoded",
-    pillarH1: "Nolimit City decoded: xNudge, xWays, xBet biar gak bingung",
-    pillarDek: "Extreme volatility, mekanik unik, vibe liar. Kita translate ke bahasa manusia biar kamu sadar risiko.",
+    pillarH1: "Nolimit City decoded: xNudge, xWays, xBet agar tidak bingung",
+    pillarDek: "Extreme volatility, mekanik unik, vibe liar. Kita translate ke bahasa manusia agar kamu sadar risiko.",
     keyword: "panduan Nolimit City",
     about: "Panduan edukasi Nolimit City Superdewa: mekanik x-series dan kontrol risiko ekstrem.",
     glossaries: [
@@ -461,15 +474,15 @@ export const sites = [
   },
   {
     id: "live",
-    domain: "superdewa-live.com",
+    domain: "crossfirethegame.com",
     accent: "site-accent-deepred",
     hero: "live.svg",
     topic: "Live Casino",
     name: "Live Casino Games Tutorial",
     nav: "Live Casino",
     pillarTitle: "Tutorial Live Casino Superdewa — Roulette, Baccarat, Blackjack",
-    pillarH1: "Live casino tutorial: biar gak awkward pas pertama duduk di meja",
-    pillarDek: "Dealer nyata, tempo cepat, etiket meja. Kita bongkar dasar-dasarnya biar kamu masuk dengan percaya diri.",
+    pillarH1: "Live casino tutorial: agar tidak awkward saat pertama duduk di meja",
+    pillarDek: "Dealer nyata, tempo cepat, etiket meja. Kita bongkar dasar-dasarnya agar kamu masuk dengan percaya diri.",
     keyword: "cara main live casino",
     about: "Tutorial edukasi live casino Superdewa: aturan dasar, etiket, dan kontrol session.",
     glossaries: [
@@ -535,7 +548,7 @@ export const sites = [
   },
   {
     id: "crash",
-    domain: "superdewa-crash.com",
+    domain: "rotpod.net",
     accent: "site-accent-lime",
     hero: "crash.svg",
     topic: "Crash Games",
@@ -543,7 +556,7 @@ export const sites = [
     nav: "Crash",
     pillarTitle: "Panduan Crash Games Superdewa — Kurva, Cash Out & Mindset Risk",
     pillarH1: "Crash games guide: baca kurva, cash out, jaga kepala tetap dingin",
-    pillarDek: "Multiplier naik, tekanan naik. Kita bahas mekanik generik crash + disiplin cash-out biar gak fomo buta.",
+    pillarDek: "Multiplier naik, tekanan naik. Kita bahas mekanik generik crash + disiplin cash-out agar tidak fomo buta.",
     keyword: "cara main crash game",
     about: "Panduan edukasi crash games Superdewa: kurva multiplier, cash-out, dan kontrol risiko.",
     glossaries: [
@@ -609,14 +622,14 @@ export const sites = [
   },
   {
     id: "sports",
-    domain: "superdewa-sports.com",
+    domain: "justcause2.com",
     accent: "site-accent-field",
     hero: "sports.svg",
     topic: "Sportsbook",
     name: "Sportsbook Guide",
     nav: "Sportsbook",
     pillarTitle: "Panduan Sportsbook Superdewa — Odds, Handicap & Parlay",
-    pillarH1: "Sportsbook guide: odds, handicap, parlay biar melek taruhan",
+    pillarH1: "Sportsbook guide: odds, handicap, parlay agar melek taruhan",
     pillarDek: "Bukan tipster palsu. Ini modul melek pasar: baca odds, pahami risiko parlay, jaga bankroll.",
     keyword: "panduan sportsbook",
     about: "Panduan edukasi sportsbook Superdewa: odds, pasar, dan disiplin taruhan olahraga.",
@@ -683,7 +696,7 @@ export const sites = [
   },
   {
     id: "play",
-    domain: "superdewa-play.com",
+    domain: "vexelgames.com",
     accent: "site-accent-calm",
     hero: "play.svg",
     topic: "Responsible Gambling",
@@ -691,7 +704,7 @@ export const sites = [
     nav: "Play Safe",
     pillarTitle: "Panduan Bermain Bertanggung Jawab Superdewa — Main Seru, Tetap Waras",
     pillarH1: "Main tetap seru, asal tetap waras — panduan bertanggung jawab",
-    pillarDek: "Ini bukan kuliah membosankan. Ini toolkit biar hiburan tetap hiburan: batas waktu, batas uang, dan sinyal bahaya.",
+    pillarDek: "Ini bukan kuliah membosankan. Ini toolkit agar hiburan tetap hiburan: batas waktu, batas uang, dan sinyal bahaya.",
     keyword: "bermain bertanggung jawab",
     about: "Panduan responsible gambling Superdewa: kontrol diri, batas sehat, dan dukungan edukatif.",
     glossaries: [
