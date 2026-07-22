@@ -48,7 +48,7 @@ a:hover { color: var(--sd-bolt); }
   gap: 1rem; padding: .75rem 0;
 }
 .brand-link { display: inline-flex; text-decoration: none; }
-.brand-link img { height: 36px; width: auto; }
+.brand-link img { height: 40px; width: auto; }
 .nav-links {
   display: flex; flex-wrap: wrap; gap: .35rem 1rem;
   list-style: none; margin: 0; padding: 0; font-size: .9rem;
@@ -60,7 +60,7 @@ a:hover { color: var(--sd-bolt); }
 .hero-grid { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 880px) { .hero-grid { grid-template-columns: 1.1fr .9fr; } }
 .hero-brand {
-  width: min(100%, 400px); margin-bottom: 1rem;
+  width: min(100%, 440px); height: auto; margin-bottom: 1rem;
   filter: drop-shadow(0 0 16px color-mix(in srgb, var(--sd-bolt) 35%, transparent));
 }
 .hero h1 {

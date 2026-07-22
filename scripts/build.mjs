@@ -124,7 +124,7 @@ function layout({ site, theme, depth, title, description, canonical, body, schem
   <header class="site-header">
     <div class="wrap nav-row">
       <a class="brand-link" href="${home}" aria-label="${esc(site.name)}">
-        <img src="${assets}/svg/logo-superdewa.svg" width="200" height="38" alt="Superdewa">
+        <img src="${assets}/img/logo-superdewa.png" width="200" height="64" alt="Superdewa">
       </a>
       <ul class="nav-links">
         ${navItems}
@@ -192,7 +192,7 @@ function buildHome(site, theme) {
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <img class="hero-brand" src="assets/svg/logo-superdewa.svg" width="420" height="80" alt="Superdewa">
+        <img class="hero-brand" src="assets/img/logo-superdewa.png" width="420" height="134" alt="Superdewa">
         <h1>${esc(site.pillarH1)}</h1>
         <p class="hero-lead">${esc(site.pillarDek)}</p>
         <div class="cta-row">
@@ -445,7 +445,13 @@ function buildSite(site) {
   ensureDir(out);
   copyDir(path.join(SHARED, "css"), path.join(out, "assets", "css"));
   copyDir(path.join(SHARED, "svg"), path.join(out, "assets", "svg"));
+  copyDir(path.join(SHARED, "img"), path.join(out, "assets", "img"));
   write(path.join(out, "assets", "favicon.svg"), faviconSvg(theme.favicon));
+  // Also drop PNG bolt favicon fallback derived from brand logo
+  const boltSrc = path.join(ROOT, "assets", "brand", "bolt.png");
+  if (fs.existsSync(boltSrc)) {
+    fs.copyFileSync(boltSrc, path.join(out, "assets", "favicon-bolt.png"));
+  }
 
   const urls = [];
 
